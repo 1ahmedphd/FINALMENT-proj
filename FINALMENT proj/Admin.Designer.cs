@@ -114,7 +114,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(14, 309);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -148,7 +148,7 @@
             this.label10.Location = new System.Drawing.Point(52, 196);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(391, 39);
+            this.label10.Size = new System.Drawing.Size(413, 39);
             this.label10.TabIndex = 9;
             this.label10.Text = "Confirm New Password: ";
             // 
@@ -158,7 +158,7 @@
             this.label9.Location = new System.Drawing.Point(184, 129);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(259, 39);
+            this.label9.Size = new System.Drawing.Size(273, 39);
             this.label9.TabIndex = 8;
             this.label9.Text = "New password: ";
             // 
@@ -168,7 +168,7 @@
             this.label8.Location = new System.Drawing.Point(196, 66);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(247, 39);
+            this.label8.Size = new System.Drawing.Size(261, 39);
             this.label8.TabIndex = 7;
             this.label8.Text = "Old Password: ";
             // 
@@ -183,7 +183,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -199,7 +199,7 @@
             this.label7.Location = new System.Drawing.Point(659, 56);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 39);
+            this.label7.Size = new System.Drawing.Size(90, 39);
             this.label7.TabIndex = 2;
             this.label7.Text = "Bio: ";
             // 
@@ -209,7 +209,7 @@
             this.label6.Location = new System.Drawing.Point(22, 148);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 39);
+            this.label6.Size = new System.Drawing.Size(202, 39);
             this.label6.TabIndex = 1;
             this.label6.Text = "Username: ";
             // 
@@ -219,7 +219,7 @@
             this.label5.Location = new System.Drawing.Point(88, 62);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 39);
+            this.label5.Size = new System.Drawing.Size(132, 39);
             this.label5.TabIndex = 0;
             this.label5.Text = "Name: ";
             // 
