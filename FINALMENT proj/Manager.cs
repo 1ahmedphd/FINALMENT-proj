@@ -523,7 +523,7 @@ namespace FINALMENT_proj
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                string sqlQuery = "Select password FROM Users Where Username = @username";
+                string sqlQuery = "Select password from Users Where Username = @username";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);

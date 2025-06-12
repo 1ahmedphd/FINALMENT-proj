@@ -42,7 +42,7 @@ namespace FINALMENT_proj
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);
                     object result = cmd.ExecuteScalar();
-                    richTextBox3.Text = result != null ? result.ToString() : null;
+                    richTextBox2.Text = result != null ? result.ToString() : null;
                 }
             }
 
@@ -234,7 +234,7 @@ namespace FINALMENT_proj
             button5.Visible = true;
             textBox6.ReadOnly = false;
             textBox7.ReadOnly = false;
-            richTextBox3.ReadOnly = false;
+            richTextBox2.ReadOnly = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace FINALMENT_proj
                 {
                     cmd.Parameters.AddWithValue("@name", textBox6.Text);
                     cmd.Parameters.AddWithValue("@username", textBox7.Text);
-                    cmd.Parameters.AddWithValue("@bio", richTextBox3.Text);
+                    cmd.Parameters.AddWithValue("@bio", richTextBox2.Text);
                     cmd.Parameters.AddWithValue("@original", originalUsername);
                     cmd.ExecuteNonQuery();
                 }
@@ -258,7 +258,7 @@ namespace FINALMENT_proj
             button5.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
-            richTextBox3.ReadOnly = true;
+            richTextBox2.ReadOnly = true;
 
         }
 
