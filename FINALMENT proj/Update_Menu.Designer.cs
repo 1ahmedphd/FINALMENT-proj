@@ -44,6 +44,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(477, 225);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 48);
@@ -54,7 +55,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(187, 225);
+            this.btnSave.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(261, 225);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 48);
             this.btnSave.TabIndex = 21;
@@ -64,31 +66,35 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(187, 135);
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(238, 135);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(86, 22);
+            this.txtPrice.Size = new System.Drawing.Size(86, 27);
             this.txtPrice.TabIndex = 20;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(187, 94);
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(238, 94);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(659, 22);
+            this.txtDesc.Size = new System.Drawing.Size(659, 27);
             this.txtDesc.TabIndex = 19;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(187, 61);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(238, 61);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(322, 22);
+            this.txtName.Size = new System.Drawing.Size(322, 27);
             this.txtName.TabIndex = 18;
             // 
             // chkAvail
             // 
             this.chkAvail.AutoSize = true;
-            this.chkAvail.Location = new System.Drawing.Point(187, 179);
+            this.chkAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAvail.Location = new System.Drawing.Point(238, 179);
             this.chkAvail.Name = "chkAvail";
-            this.chkAvail.Size = new System.Drawing.Size(124, 20);
+            this.chkAvail.Size = new System.Drawing.Size(165, 24);
             this.chkAvail.TabIndex = 17;
             this.chkAvail.Text = "Tick if Available";
             this.chkAvail.UseVisualStyleBackColor = true;
@@ -96,54 +102,60 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 179);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 16);
+            this.label7.Size = new System.Drawing.Size(211, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Availability of Food Item";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 141);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.Size = new System.Drawing.Size(108, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Price in RM";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 100);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 16);
+            this.label9.Size = new System.Drawing.Size(217, 20);
             this.label9.TabIndex = 14;
             this.label9.Text = "Description of Food Item";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 61);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 16);
+            this.label10.Size = new System.Drawing.Size(168, 20);
             this.label10.TabIndex = 13;
             this.label10.Text = "Name of Food Item";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(161, 16);
+            this.label11.Size = new System.Drawing.Size(227, 20);
             this.label11.TabIndex = 12;
             this.label11.Text = "Update Menu Item Details";
             // 
             // lblFoodID
             // 
             this.lblFoodID.AutoSize = true;
+            this.lblFoodID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoodID.Location = new System.Drawing.Point(6, 29);
             this.lblFoodID.Name = "lblFoodID";
-            this.lblFoodID.Size = new System.Drawing.Size(55, 16);
+            this.lblFoodID.Size = new System.Drawing.Size(75, 20);
             this.lblFoodID.TabIndex = 23;
             this.lblFoodID.Text = "Food ID";
             // 
@@ -151,7 +163,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 296);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(914, 296);
             this.Controls.Add(this.lblFoodID);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnSave);

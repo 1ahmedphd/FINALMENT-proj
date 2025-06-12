@@ -114,5 +114,13 @@ namespace FINALMENT_proj
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Welcome welcome = new Welcome();
+            welcome.ShowDialog();
+            this.Close();
+        }
     }
 }

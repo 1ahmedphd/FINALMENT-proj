@@ -360,7 +360,7 @@
             this.tabPageRefund.Location = new System.Drawing.Point(4, 25);
             this.tabPageRefund.Name = "tabPageRefund";
             this.tabPageRefund.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageRefund.Size = new System.Drawing.Size(1248, 458);
+            this.tabPageRefund.Size = new System.Drawing.Size(1246, 421);
             this.tabPageRefund.TabIndex = 1;
             this.tabPageRefund.Text = "Refund";
             // 
@@ -386,7 +386,7 @@
             this.dataGridViewRefunds.ReadOnly = true;
             this.dataGridViewRefunds.RowHeadersWidth = 51;
             this.dataGridViewRefunds.RowTemplate.Height = 24;
-            this.dataGridViewRefunds.Size = new System.Drawing.Size(1242, 318);
+            this.dataGridViewRefunds.Size = new System.Drawing.Size(1240, 318);
             this.dataGridViewRefunds.TabIndex = 17;
             this.dataGridViewRefunds.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRefunds_RowHeaderMouseDoubleClick);
             // 
