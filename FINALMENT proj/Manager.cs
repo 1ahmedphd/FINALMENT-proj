@@ -15,7 +15,7 @@ namespace FINALMENT_proj
     public partial class ManagerForm : Form
     {
         public string _connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
-        private ManagerLogic _managerLogic; // Instance of the ManagerLogic class
+        private ManagerLogic _managerLogic; // Instance of the ManagerLogic clas
         public User currentUser;
         public ManagerForm(User currentuser)
         {
