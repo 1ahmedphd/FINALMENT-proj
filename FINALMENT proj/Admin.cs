@@ -370,5 +370,10 @@ namespace FINALMENT_proj
             welcome.ShowDialog();
             this.Close();
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
