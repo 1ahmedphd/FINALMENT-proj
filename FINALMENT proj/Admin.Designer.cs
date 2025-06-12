@@ -214,11 +214,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1186, 224);
+            this.button9.Location = new System.Drawing.Point(1083, 79);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 0;
-            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // textBox7
             // 
