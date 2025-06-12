@@ -375,5 +375,13 @@ namespace FINALMENT_proj
         {
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Welcome welcome = new Welcome();
+            welcome.ShowDialog();
+            this.Close();
+        }
     }
 }
