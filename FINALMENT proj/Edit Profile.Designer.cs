@@ -52,7 +52,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.button6);
@@ -60,20 +59,23 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.groupBox2.Location = new System.Drawing.Point(12, 583);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 301);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(2719, 545);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1360, 281);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Change password";
+            this.groupBox2.Text = "Change Password";
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnClose.Location = new System.Drawing.Point(2489, 414);
+            this.btnClose.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(1256, 586);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(167, 63);
+            this.btnClose.Size = new System.Drawing.Size(110, 47);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Back";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -81,63 +83,70 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1088, 392);
+            this.textBox5.Location = new System.Drawing.Point(432, 202);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(541, 83);
+            this.textBox5.Size = new System.Drawing.Size(624, 45);
             this.textBox5.TabIndex = 12;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(865, 252);
+            this.textBox4.Location = new System.Drawing.Point(432, 130);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(541, 83);
+            this.textBox4.Size = new System.Drawing.Size(624, 45);
             this.textBox4.TabIndex = 11;
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button6.Location = new System.Drawing.Point(2107, 277);
+            this.button6.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(1099, 108);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(321, 63);
+            this.button6.Size = new System.Drawing.Size(232, 101);
             this.button6.TabIndex = 7;
-            this.button6.Text = "Change password";
+            this.button6.Text = "Change Password";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(865, 123);
+            this.textBox3.Location = new System.Drawing.Point(432, 63);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(541, 83);
+            this.textBox3.Size = new System.Drawing.Size(624, 45);
             this.textBox3.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(232, 392);
+            this.label10.Location = new System.Drawing.Point(5, 202);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(765, 76);
+            this.label10.Size = new System.Drawing.Size(413, 39);
             this.label10.TabIndex = 9;
             this.label10.Text = "Confirm New Password: ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(232, 255);
+            this.label9.Location = new System.Drawing.Point(147, 135);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(506, 76);
+            this.label9.Size = new System.Drawing.Size(277, 39);
             this.label9.TabIndex = 8;
-            this.label9.Text = "New password: ";
+            this.label9.Text = "New Password: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(232, 123);
+            this.label8.Location = new System.Drawing.Point(157, 66);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(484, 76);
+            this.label8.Size = new System.Drawing.Size(261, 39);
             this.label8.TabIndex = 7;
             this.label8.Text = "Old Password: ";
             // 
@@ -151,36 +160,41 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(2719, 543);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1360, 280);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profile";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(567, 327);
+            this.textBox7.Location = new System.Drawing.Point(213, 166);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(503, 83);
+            this.textBox7.Size = new System.Drawing.Size(449, 45);
             this.textBox7.TabIndex = 14;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(391, 152);
+            this.textBox6.Location = new System.Drawing.Point(213, 78);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(484, 83);
+            this.textBox6.Size = new System.Drawing.Size(449, 45);
             this.textBox6.TabIndex = 13;
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(2391, 259);
+            this.button5.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(1233, 181);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 63);
+            this.button5.Size = new System.Drawing.Size(113, 56);
             this.button5.TabIndex = 6;
             this.button5.Text = "Save";
             this.button5.UseVisualStyleBackColor = true;
@@ -189,10 +203,11 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(2391, 159);
+            this.button4.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(1233, 75);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 63);
+            this.button4.Size = new System.Drawing.Size(113, 57);
             this.button4.TabIndex = 5;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
@@ -200,48 +215,52 @@
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(1088, 159);
+            this.richTextBox3.Location = new System.Drawing.Point(769, 61);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(1257, 363);
+            this.richTextBox3.Size = new System.Drawing.Size(447, 189);
             this.richTextBox3.TabIndex = 4;
             this.richTextBox3.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(935, 159);
+            this.label7.Location = new System.Drawing.Point(693, 61);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 76);
+            this.label7.Size = new System.Drawing.Size(90, 39);
             this.label7.TabIndex = 2;
             this.label7.Text = "Bio: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(154, 330);
+            this.label6.Location = new System.Drawing.Point(7, 169);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(377, 76);
+            this.label6.Size = new System.Drawing.Size(202, 39);
             this.label6.TabIndex = 1;
             this.label6.Text = "Username: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(154, 159);
+            this.label5.Location = new System.Drawing.Point(77, 82);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(247, 76);
+            this.label5.Size = new System.Drawing.Size(132, 39);
             this.label5.TabIndex = 0;
             this.label5.Text = "Name: ";
             // 
             // Edit_Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2755, 1143);
+            this.ClientSize = new System.Drawing.Size(1386, 644);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Edit_Profile";
             this.Text = "Edit Profile Details";
             this.groupBox2.ResumeLayout(false);
