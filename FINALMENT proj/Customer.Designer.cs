@@ -55,6 +55,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -72,7 +73,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnlogout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -393,6 +393,17 @@
             this.tabPage3.Text = "Profile";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnlogout
+            // 
+            this.btnlogout.Location = new System.Drawing.Point(3278, 1870);
+            this.btnlogout.Margin = new System.Windows.Forms.Padding(6);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(430, 105);
+            this.btnlogout.TabIndex = 10;
+            this.btnlogout.Text = "logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox5);
@@ -565,17 +576,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Name: ";
             // 
-            // btnlogout
-            // 
-            this.btnlogout.Location = new System.Drawing.Point(3278, 1870);
-            this.btnlogout.Margin = new System.Windows.Forms.Padding(6);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(430, 105);
-            this.btnlogout.TabIndex = 10;
-            this.btnlogout.Text = "logout";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
-            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -585,7 +585,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Customer";
             this.Text = "Customer";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
