@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtManagerResponse = new System.Windows.Forms.TextBox();
             this.btnRespond = new System.Windows.Forms.Button();
             this.rbApprove = new System.Windows.Forms.RadioButton();
@@ -100,6 +100,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.feedbackTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.FeedbackTableAdapter();
             this.refundRequestsTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.RefundRequestsTableAdapter();
+            this.lblWelcomeManager = new System.Windows.Forms.Label();
             this.tabControlManager.SuspendLayout();
             this.tabPageFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeedback)).BeginInit();
@@ -186,12 +187,11 @@
             this.tabControlManager.Controls.Add(this.tabPageRefund);
             this.tabControlManager.Controls.Add(this.tabPageTopUp);
             this.tabControlManager.Controls.Add(this.tabPageManagerProfile);
-            this.tabControlManager.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlManager.Location = new System.Drawing.Point(0, 0);
+            this.tabControlManager.Location = new System.Drawing.Point(0, 39);
             this.tabControlManager.Name = "tabControlManager";
             this.tabControlManager.SelectedIndex = 0;
-            this.tabControlManager.Size = new System.Drawing.Size(1375, 642);
+            this.tabControlManager.Size = new System.Drawing.Size(1375, 603);
             this.tabControlManager.TabIndex = 11;
             // 
             // tabPageFeedback
@@ -206,7 +206,7 @@
             this.tabPageFeedback.Location = new System.Drawing.Point(4, 25);
             this.tabPageFeedback.Name = "tabPageFeedback";
             this.tabPageFeedback.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFeedback.Size = new System.Drawing.Size(1367, 613);
+            this.tabPageFeedback.Size = new System.Drawing.Size(1367, 574);
             this.tabPageFeedback.TabIndex = 0;
             this.tabPageFeedback.Text = "Feedback";
             // 
@@ -217,14 +217,14 @@
             this.dataGridViewFeedback.AutoGenerateColumns = false;
             this.dataGridViewFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFeedback.BackgroundColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFeedback.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.feedbackIDDataGridViewTextBoxColumn,
@@ -234,14 +234,14 @@
             this.isRespondedDataGridViewCheckBoxColumn,
             this.createdAtDataGridViewTextBoxColumn});
             this.dataGridViewFeedback.DataSource = this.feedbackBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewFeedback.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewFeedback.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewFeedback.Name = "dataGridViewFeedback";
@@ -381,7 +381,7 @@
             this.tabPageRefund.Location = new System.Drawing.Point(4, 25);
             this.tabPageRefund.Name = "tabPageRefund";
             this.tabPageRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRefund.Size = new System.Drawing.Size(1367, 613);
+            this.tabPageRefund.Size = new System.Drawing.Size(1367, 574);
             this.tabPageRefund.TabIndex = 1;
             this.tabPageRefund.Text = "Refund";
             // 
@@ -392,14 +392,14 @@
             this.dataGridViewRefunds.AutoGenerateColumns = false;
             this.dataGridViewRefunds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRefunds.BackgroundColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRefunds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.requestIDDataGridViewTextBoxColumn,
@@ -409,14 +409,14 @@
             this.statusDataGridViewTextBoxColumn,
             this.reviewedAtDataGridViewTextBoxColumn});
             this.dataGridViewRefunds.DataSource = this.refundRequestsBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewRefunds.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewRefunds.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewRefunds.Name = "dataGridViewRefunds";
@@ -566,7 +566,7 @@
             this.tabPageTopUp.Location = new System.Drawing.Point(4, 25);
             this.tabPageTopUp.Name = "tabPageTopUp";
             this.tabPageTopUp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTopUp.Size = new System.Drawing.Size(1367, 613);
+            this.tabPageTopUp.Size = new System.Drawing.Size(1367, 574);
             this.tabPageTopUp.TabIndex = 2;
             this.tabPageTopUp.Text = "Top-Up";
             // 
@@ -662,7 +662,7 @@
             this.tabPageManagerProfile.Location = new System.Drawing.Point(4, 25);
             this.tabPageManagerProfile.Name = "tabPageManagerProfile";
             this.tabPageManagerProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageManagerProfile.Size = new System.Drawing.Size(1367, 613);
+            this.tabPageManagerProfile.Size = new System.Drawing.Size(1367, 574);
             this.tabPageManagerProfile.TabIndex = 3;
             this.tabPageManagerProfile.Text = "Profile";
             // 
@@ -744,7 +744,7 @@
             this.label10.Location = new System.Drawing.Point(17, 194);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(391, 39);
+            this.label10.Size = new System.Drawing.Size(378, 38);
             this.label10.TabIndex = 9;
             this.label10.Text = "Confirm New Password: ";
             // 
@@ -755,7 +755,7 @@
             this.label9.Location = new System.Drawing.Point(145, 129);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(263, 39);
+            this.label9.Size = new System.Drawing.Size(255, 38);
             this.label9.TabIndex = 8;
             this.label9.Text = "New Password: ";
             // 
@@ -766,7 +766,7 @@
             this.label8.Location = new System.Drawing.Point(161, 64);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(247, 39);
+            this.label8.Size = new System.Drawing.Size(240, 38);
             this.label8.TabIndex = 7;
             this.label8.Text = "Old Password: ";
             // 
@@ -826,7 +826,7 @@
             this.label7.Location = new System.Drawing.Point(690, 53);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 39);
+            this.label7.Size = new System.Drawing.Size(82, 38);
             this.label7.TabIndex = 2;
             this.label7.Text = "Bio: ";
             // 
@@ -862,7 +862,7 @@
             this.label6.Location = new System.Drawing.Point(11, 139);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(192, 39);
+            this.label6.Size = new System.Drawing.Size(186, 38);
             this.label6.TabIndex = 1;
             this.label6.Text = "Username: ";
             // 
@@ -873,7 +873,7 @@
             this.label5.Location = new System.Drawing.Point(77, 62);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 39);
+            this.label5.Size = new System.Drawing.Size(122, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Name: ";
             // 
@@ -885,11 +885,22 @@
             // 
             this.refundRequestsTableAdapter.ClearBeforeFill = true;
             // 
+            // lblWelcomeManager
+            // 
+            this.lblWelcomeManager.AutoSize = true;
+            this.lblWelcomeManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeManager.Location = new System.Drawing.Point(-2, 4);
+            this.lblWelcomeManager.Name = "lblWelcomeManager";
+            this.lblWelcomeManager.Size = new System.Drawing.Size(156, 32);
+            this.lblWelcomeManager.TabIndex = 12;
+            this.lblWelcomeManager.Text = "Welcome, ";
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1375, 642);
+            this.Controls.Add(this.lblWelcomeManager);
             this.Controls.Add(this.tabControlManager);
             this.Name = "ManagerForm";
             this.Text = "Manager";
@@ -916,6 +927,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -989,6 +1001,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblWelcomeManager;
     }
 }
 
