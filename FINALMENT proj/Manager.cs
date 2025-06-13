@@ -50,10 +50,10 @@ namespace FINALMENT_proj
 
         #region Feedback Handling
 
-        /// <summary>
-        /// Loads new feedback into the DataGridView.
-        /// </summary>
-        private void LoadFeedback()
+/// <summary>
+/// Loads new feedback into the DataGridView.
+/// </summary>
+private void LoadFeedback()
         {
             try
             {
@@ -126,7 +126,19 @@ namespace FINALMENT_proj
                 // Check the status of all selected rows
                 foreach (DataGridViewRow selectedRow in dataGridViewFeedback.SelectedRows)
                 {
-                    int isResponded = Convert.ToInt32(selectedRow.Cells[4].Value);
+                    int isResponded = 0;
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
+                    {
+                        string query = "Select IsResponded from Feedback where FeedbackID = @feedbackid";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        conn.Open();
+                        cmd.Parameters.AddWithValue("@feedbackid", selectedRow.Cells[0].Value);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            isResponded = Convert.ToInt32(reader["IsResponded"]);
+                        }
+                    }
 
                     if (isResponded == 1)
                     {
@@ -165,11 +177,11 @@ namespace FINALMENT_proj
                     foreach (DataGridViewRow selectedRow in dataGridViewFeedback.SelectedRows)
                     {
                         int feedbackID = Convert.ToInt32(selectedRow.Cells[0].Value);
-                        int isResponded = Convert.ToInt32(selectedRow.Cells[4].Value);
+                        //int isResponded = Convert.ToInt32(selectedRow.Cells[4].Value);
 
                         // Update the selected row in the DataGridView
                         selectedRow.Cells[3].Value = response;
-                        selectedRow.Cells[4].Value = 1;
+                        //selectedRow.Cells[4].Value = 1;
 
                         // Call the backend method to update the database
                         _managerLogic.RespondToFeedback(feedbackID, response);
@@ -581,10 +593,34 @@ namespace FINALMENT_proj
         private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Make sure the click is on a valid cell (not header row)
-            if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3))
+            try
             {
                 string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                MessageBox.Show(cellValue);
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
+                {
+                    MessageBox.Show(cellValue);
+                }
+            }
+            catch 
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        private void txtManagerResponse_Enter(object sender, EventArgs e)
+        {
+            bool isResponded = false;
+            foreach (DataGridViewRow row in dataGridViewFeedback.SelectedRows)
+            {
+                if (!string.IsNullOrEmpty(row.Cells[3].Value?.ToString()))
+                {
+                    isResponded = true;
+                }
+            }
+            if (isResponded)
+            {
+                MessageBox.Show("One or more selected feedbacks have already been responded to.");
+                LoadFeedback();
             }
         }
     }
