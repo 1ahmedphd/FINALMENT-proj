@@ -969,8 +969,6 @@
         private IOOPGADataSetTableAdapters.FeedbackTableAdapter feedbackTableAdapter;
         private System.Windows.Forms.BindingSource refundRequestsBindingSource;
         private IOOPGADataSetTableAdapters.RefundRequestsTableAdapter refundRequestsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username1;
         private System.Windows.Forms.DataGridViewTextBoxColumn requestIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
