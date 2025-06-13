@@ -80,7 +80,7 @@ namespace FINALMENT_proj
 
                 // Adjust column widths for better readability
                 dataGridViewFeedback.Columns[0].Width = 75;     // FeedbackID
-                dataGridViewFeedback.Columns[1].Width = 100;    // username   
+                dataGridViewFeedback.Columns[1].Width = 100;    // Customer   
                 dataGridViewFeedback.Columns[2].Width = 250;    // FeedbackText
                 dataGridViewFeedback.Columns[3].Width = 250;    // ManagerResponse
                 dataGridViewFeedback.Columns[4].Width = 125;    // CreatedAt
@@ -230,7 +230,7 @@ namespace FINALMENT_proj
 
                 // Adjust column widths for better readability
                 dataGridViewRefunds.Columns[0].Width = 75;  // RequestID
-                dataGridViewRefunds.Columns[1].Width = 100; // username
+                dataGridViewRefunds.Columns[1].Width = 100; // Customer
                 dataGridViewRefunds.Columns[2].Width = 75;  // Amount
                 dataGridViewRefunds.Columns[3].Width = 200; // Reason
                 dataGridViewRefunds.Columns[4].Width = 75;  // Status

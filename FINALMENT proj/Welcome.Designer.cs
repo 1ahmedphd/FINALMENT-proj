@@ -48,7 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(100, 509);
+            this.label4.Location = new System.Drawing.Point(106, 509);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 38);
@@ -165,7 +165,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.NavajoWhite;
-            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.label8);
@@ -187,7 +187,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(334, 407);
+            this.textBox6.Location = new System.Drawing.Point(354, 407);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(344, 36);
@@ -197,10 +197,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(207, 404);
+            this.label8.Location = new System.Drawing.Point(212, 404);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 39);
+            this.label8.Size = new System.Drawing.Size(128, 38);
             this.label8.TabIndex = 12;
             this.label8.Text = "Name: ";
             // 
@@ -220,7 +220,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(334, 544);
+            this.textBox5.Location = new System.Drawing.Point(354, 544);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(344, 36);
@@ -230,17 +230,17 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 541);
+            this.label7.Location = new System.Drawing.Point(3, 540);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(331, 39);
+            this.label7.Size = new System.Drawing.Size(321, 38);
             this.label7.TabIndex = 9;
             this.label7.Text = "Confirm Password: ";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(334, 499);
+            this.textBox3.Location = new System.Drawing.Point(354, 499);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(344, 36);
@@ -250,17 +250,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(144, 496);
+            this.label5.Location = new System.Drawing.Point(147, 496);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(195, 39);
+            this.label5.Size = new System.Drawing.Size(190, 38);
             this.label5.TabIndex = 7;
             this.label5.Text = "Password: ";
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(334, 452);
+            this.textBox4.Location = new System.Drawing.Point(354, 452);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(344, 36);
@@ -273,28 +273,28 @@
             this.label6.Location = new System.Drawing.Point(137, 449);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 39);
+            this.label6.Size = new System.Drawing.Size(196, 38);
             this.label6.TabIndex = 5;
             this.label6.Text = "Username: ";
             // 
-            // label9
+            // label2
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label9.Font = new System.Drawing.Font("Lucida Calligraphy", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(301, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(239, 43);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Welcome To";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label2.Font = new System.Drawing.Font("Lucida Calligraphy", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(301, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 43);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Welcome To";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(144, 39);
+            this.pictureBox2.Location = new System.Drawing.Point(205, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(489, 350);
+            this.pictureBox2.Size = new System.Drawing.Size(459, 390);
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
@@ -339,7 +339,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

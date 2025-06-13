@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtManagerResponse = new System.Windows.Forms.TextBox();
             this.btnRespond = new System.Windows.Forms.Button();
             this.rbApprove = new System.Windows.Forms.RadioButton();
@@ -56,12 +56,6 @@
             this.rbResponded = new System.Windows.Forms.RadioButton();
             this.tabPageRefund = new System.Windows.Forms.TabPage();
             this.dataGridViewRefunds = new System.Windows.Forms.DataGridView();
-            this.requestIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reviewedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refundRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRefresh2 = new System.Windows.Forms.Button();
             this.gbFilter2 = new System.Windows.Forms.GroupBox();
@@ -102,6 +96,12 @@
             this.feedbackTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.FeedbackTableAdapter();
             this.refundRequestsTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.RefundRequestsTableAdapter();
             this.lblWelcomeManager = new System.Windows.Forms.Label();
+            this.requestIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reviewedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlManager.SuspendLayout();
             this.tabPageFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeedback)).BeginInit();
@@ -122,7 +122,7 @@
             // 
             this.txtManagerResponse.BackColor = System.Drawing.SystemColors.Window;
             this.txtManagerResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManagerResponse.Location = new System.Drawing.Point(218, 454);
+            this.txtManagerResponse.Location = new System.Drawing.Point(226, 454);
             this.txtManagerResponse.Multiline = true;
             this.txtManagerResponse.Name = "txtManagerResponse";
             this.txtManagerResponse.Size = new System.Drawing.Size(543, 104);
@@ -131,7 +131,7 @@
             // btnRespond
             // 
             this.btnRespond.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRespond.Location = new System.Drawing.Point(769, 454);
+            this.btnRespond.Location = new System.Drawing.Point(777, 454);
             this.btnRespond.Name = "btnRespond";
             this.btnRespond.Size = new System.Drawing.Size(146, 54);
             this.btnRespond.TabIndex = 2;
@@ -154,7 +154,7 @@
             // 
             this.rbReject.AutoSize = true;
             this.rbReject.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbReject.Location = new System.Drawing.Point(145, 454);
+            this.rbReject.Location = new System.Drawing.Point(150, 454);
             this.rbReject.Name = "rbReject";
             this.rbReject.Size = new System.Drawing.Size(109, 33);
             this.rbReject.TabIndex = 8;
@@ -164,7 +164,7 @@
             // btnUpdateRefund
             // 
             this.btnUpdateRefund.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateRefund.Location = new System.Drawing.Point(262, 454);
+            this.btnUpdateRefund.Location = new System.Drawing.Point(272, 454);
             this.btnUpdateRefund.Name = "btnUpdateRefund";
             this.btnUpdateRefund.Size = new System.Drawing.Size(146, 54);
             this.btnUpdateRefund.TabIndex = 9;
@@ -218,14 +218,14 @@
             this.dataGridViewFeedback.AutoGenerateColumns = false;
             this.dataGridViewFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFeedback.BackgroundColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFeedback.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.feedbackIDDataGridViewTextBoxColumn,
@@ -234,14 +234,14 @@
             this.managerResponseDataGridViewTextBoxColumn,
             this.createdAtDataGridViewTextBoxColumn});
             this.dataGridViewFeedback.DataSource = this.feedbackBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewFeedback.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewFeedback.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewFeedback.Name = "dataGridViewFeedback";
@@ -306,7 +306,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(921, 454);
+            this.btnRefresh.Location = new System.Drawing.Point(929, 454);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(146, 54);
             this.btnRefresh.TabIndex = 15;
@@ -320,9 +320,9 @@
             this.gbFilter.Controls.Add(this.rbAll);
             this.gbFilter.Controls.Add(this.rbResponded);
             this.gbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFilter.Location = new System.Drawing.Point(1187, 454);
+            this.gbFilter.Location = new System.Drawing.Point(1171, 454);
             this.gbFilter.Name = "gbFilter";
-            this.gbFilter.Size = new System.Drawing.Size(172, 114);
+            this.gbFilter.Size = new System.Drawing.Size(188, 114);
             this.gbFilter.TabIndex = 14;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
@@ -385,14 +385,14 @@
             this.dataGridViewRefunds.AutoGenerateColumns = false;
             this.dataGridViewRefunds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRefunds.BackgroundColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRefunds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.requestIDDataGridViewTextBoxColumn,
@@ -402,14 +402,14 @@
             this.statusDataGridViewTextBoxColumn,
             this.reviewedAtDataGridViewTextBoxColumn});
             this.dataGridViewRefunds.DataSource = this.refundRequestsBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewRefunds.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewRefunds.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewRefunds.Name = "dataGridViewRefunds";
@@ -420,54 +420,6 @@
             this.dataGridViewRefunds.TabIndex = 17;
             this.dataGridViewRefunds.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRefunds_RowHeaderMouseDoubleClick);
             // 
-            // requestIDDataGridViewTextBoxColumn
-            // 
-            this.requestIDDataGridViewTextBoxColumn.DataPropertyName = "RequestID";
-            this.requestIDDataGridViewTextBoxColumn.HeaderText = "RequestID";
-            this.requestIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.requestIDDataGridViewTextBoxColumn.Name = "requestIDDataGridViewTextBoxColumn";
-            this.requestIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usernameDataGridViewTextBoxColumn1
-            // 
-            this.usernameDataGridViewTextBoxColumn1.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn1.HeaderText = "username";
-            this.usernameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn1.Name = "usernameDataGridViewTextBoxColumn1";
-            this.usernameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reasonDataGridViewTextBoxColumn
-            // 
-            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "Reason";
-            this.reasonDataGridViewTextBoxColumn.HeaderText = "Reason";
-            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
-            this.reasonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reviewedAtDataGridViewTextBoxColumn
-            // 
-            this.reviewedAtDataGridViewTextBoxColumn.DataPropertyName = "ReviewedAt";
-            this.reviewedAtDataGridViewTextBoxColumn.HeaderText = "ReviewedAt";
-            this.reviewedAtDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reviewedAtDataGridViewTextBoxColumn.Name = "reviewedAtDataGridViewTextBoxColumn";
-            this.reviewedAtDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // refundRequestsBindingSource
             // 
             this.refundRequestsBindingSource.DataMember = "RefundRequests";
@@ -476,7 +428,7 @@
             // btnRefresh2
             // 
             this.btnRefresh2.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh2.Location = new System.Drawing.Point(414, 454);
+            this.btnRefresh2.Location = new System.Drawing.Point(424, 454);
             this.btnRefresh2.Name = "btnRefresh2";
             this.btnRefresh2.Size = new System.Drawing.Size(146, 54);
             this.btnRefresh2.TabIndex = 16;
@@ -491,9 +443,9 @@
             this.gbFilter2.Controls.Add(this.rbRejected);
             this.gbFilter2.Controls.Add(this.rbApproved);
             this.gbFilter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFilter2.Location = new System.Drawing.Point(1106, 454);
+            this.gbFilter2.Location = new System.Drawing.Point(1093, 454);
             this.gbFilter2.Name = "gbFilter2";
-            this.gbFilter2.Size = new System.Drawing.Size(253, 100);
+            this.gbFilter2.Size = new System.Drawing.Size(266, 100);
             this.gbFilter2.TabIndex = 15;
             this.gbFilter2.TabStop = false;
             this.gbFilter2.Text = "Filter";
@@ -526,7 +478,7 @@
             // rbRejected
             // 
             this.rbRejected.AutoSize = true;
-            this.rbRejected.Location = new System.Drawing.Point(124, 60);
+            this.rbRejected.Location = new System.Drawing.Point(128, 60);
             this.rbRejected.Name = "rbRejected";
             this.rbRejected.Size = new System.Drawing.Size(117, 29);
             this.rbRejected.TabIndex = 13;
@@ -537,7 +489,7 @@
             // rbApproved
             // 
             this.rbApproved.AutoSize = true;
-            this.rbApproved.Location = new System.Drawing.Point(124, 25);
+            this.rbApproved.Location = new System.Drawing.Point(128, 25);
             this.rbApproved.Name = "rbApproved";
             this.rbApproved.Size = new System.Drawing.Size(126, 29);
             this.rbApproved.TabIndex = 12;
@@ -909,6 +861,54 @@
             this.lblWelcomeManager.TabIndex = 12;
             this.lblWelcomeManager.Text = "Welcome, ";
             // 
+            // requestIDDataGridViewTextBoxColumn
+            // 
+            this.requestIDDataGridViewTextBoxColumn.DataPropertyName = "RequestID";
+            this.requestIDDataGridViewTextBoxColumn.HeaderText = "RequestID";
+            this.requestIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.requestIDDataGridViewTextBoxColumn.Name = "requestIDDataGridViewTextBoxColumn";
+            this.requestIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usernameDataGridViewTextBoxColumn1
+            // 
+            this.usernameDataGridViewTextBoxColumn1.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn1.HeaderText = "Customer";
+            this.usernameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn1.Name = "usernameDataGridViewTextBoxColumn1";
+            this.usernameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reasonDataGridViewTextBoxColumn
+            // 
+            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "Reason";
+            this.reasonDataGridViewTextBoxColumn.HeaderText = "Reason";
+            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
+            this.reasonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // reviewedAtDataGridViewTextBoxColumn
+            // 
+            this.reviewedAtDataGridViewTextBoxColumn.DataPropertyName = "ReviewedAt";
+            this.reviewedAtDataGridViewTextBoxColumn.HeaderText = "ReviewedAt";
+            this.reviewedAtDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reviewedAtDataGridViewTextBoxColumn.Name = "reviewedAtDataGridViewTextBoxColumn";
+            this.reviewedAtDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -983,12 +983,6 @@
         private IOOPGADataSetTableAdapters.FeedbackTableAdapter feedbackTableAdapter;
         private System.Windows.Forms.BindingSource refundRequestsBindingSource;
         private IOOPGADataSetTableAdapters.RefundRequestsTableAdapter refundRequestsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn requestIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reviewedAtDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -1015,6 +1009,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdAtDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblBalance2;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requestIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reviewedAtDataGridViewTextBoxColumn;
     }
 }
 
