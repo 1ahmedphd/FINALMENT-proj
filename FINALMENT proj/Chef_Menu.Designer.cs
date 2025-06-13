@@ -43,7 +43,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnEditProfile = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -81,7 +80,7 @@
             this.dataGridView1.DataSource = this.menuBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -151,7 +150,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView2.Location = new System.Drawing.Point(12, 531);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -172,7 +171,7 @@
             // tabControl1
             // 
             this.tabControl1.Location = new System.Drawing.Point(-358, 1195);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(310, 19);
@@ -184,7 +183,7 @@
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Location = new System.Drawing.Point(2, 79);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1922, 1132);
@@ -193,7 +192,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.btnlogout);
             this.tabPage1.Controls.Add(this.btnEditProfile);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -201,29 +199,18 @@
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(10, 48);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage1.Size = new System.Drawing.Size(1902, 1074);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(12, 531);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1878, 438);
-            this.listBox1.TabIndex = 15;
             // 
             // btnlogout
             // 
             this.btnlogout.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogout.Location = new System.Drawing.Point(972, 984);
-            this.btnlogout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnlogout.Margin = new System.Windows.Forms.Padding(6);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(324, 68);
             this.btnlogout.TabIndex = 9;
@@ -235,7 +222,7 @@
             // 
             this.btnEditProfile.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfile.Location = new System.Drawing.Point(556, 984);
-            this.btnEditProfile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEditProfile.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(324, 68);
             this.btnEditProfile.TabIndex = 8;
@@ -252,9 +239,9 @@
             this.tabPage2.Controls.Add(this.btnAddMenuItem);
             this.tabPage2.Controls.Add(this.btnUpdateMenuItem);
             this.tabPage2.Location = new System.Drawing.Point(10, 48);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage2.Size = new System.Drawing.Size(1902, 1074);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Menu";
@@ -265,7 +252,7 @@
             this.listMenu.FormattingEnabled = true;
             this.listMenu.ItemHeight = 31;
             this.listMenu.Location = new System.Drawing.Point(12, 48);
-            this.listMenu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listMenu.Margin = new System.Windows.Forms.Padding(6);
             this.listMenu.Name = "listMenu";
             this.listMenu.Size = new System.Drawing.Size(1884, 934);
             this.listMenu.TabIndex = 16;
@@ -285,7 +272,7 @@
             // 
             this.btnDeleteMenuItem.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteMenuItem.Location = new System.Drawing.Point(1154, 998);
-            this.btnDeleteMenuItem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDeleteMenuItem.Margin = new System.Windows.Forms.Padding(6);
             this.btnDeleteMenuItem.Name = "btnDeleteMenuItem";
             this.btnDeleteMenuItem.Size = new System.Drawing.Size(312, 66);
             this.btnDeleteMenuItem.TabIndex = 13;
@@ -297,7 +284,7 @@
             // 
             this.btnAddMenuItem.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMenuItem.Location = new System.Drawing.Point(352, 998);
-            this.btnAddMenuItem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddMenuItem.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddMenuItem.Name = "btnAddMenuItem";
             this.btnAddMenuItem.Size = new System.Drawing.Size(312, 66);
             this.btnAddMenuItem.TabIndex = 11;
@@ -309,7 +296,7 @@
             // 
             this.btnUpdateMenuItem.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateMenuItem.Location = new System.Drawing.Point(754, 998);
-            this.btnUpdateMenuItem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUpdateMenuItem.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpdateMenuItem.Name = "btnUpdateMenuItem";
             this.btnUpdateMenuItem.Size = new System.Drawing.Size(312, 66);
             this.btnUpdateMenuItem.TabIndex = 12;
@@ -325,9 +312,9 @@
             this.tabPage3.Controls.Add(this.btnMarkComplete);
             this.tabPage3.Controls.Add(this.btnMarkInProgress);
             this.tabPage3.Location = new System.Drawing.Point(10, 48);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage3.Size = new System.Drawing.Size(1902, 1074);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Orders";
@@ -338,7 +325,7 @@
             this.listOrder.FormattingEnabled = true;
             this.listOrder.ItemHeight = 31;
             this.listOrder.Location = new System.Drawing.Point(12, 43);
-            this.listOrder.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listOrder.Margin = new System.Windows.Forms.Padding(6);
             this.listOrder.Name = "listOrder";
             this.listOrder.Size = new System.Drawing.Size(1878, 934);
             this.listOrder.TabIndex = 14;
@@ -358,7 +345,7 @@
             // 
             this.btnMarkComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarkComplete.Location = new System.Drawing.Point(982, 992);
-            this.btnMarkComplete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMarkComplete.Margin = new System.Windows.Forms.Padding(6);
             this.btnMarkComplete.Name = "btnMarkComplete";
             this.btnMarkComplete.Size = new System.Drawing.Size(562, 72);
             this.btnMarkComplete.TabIndex = 13;
@@ -370,7 +357,7 @@
             // 
             this.btnMarkInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarkInProgress.Location = new System.Drawing.Point(294, 992);
-            this.btnMarkInProgress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMarkInProgress.Margin = new System.Windows.Forms.Padding(6);
             this.btnMarkInProgress.Name = "btnMarkInProgress";
             this.btnMarkInProgress.Size = new System.Drawing.Size(528, 72);
             this.btnMarkInProgress.TabIndex = 12;
@@ -398,7 +385,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Chef_Menu";
             this.Text = "Chef Menu";
             this.Load += new System.EventHandler(this.Chef_Menu_Load);
@@ -448,7 +435,6 @@
         private System.Windows.Forms.ListBox listMenu;
         private System.Windows.Forms.ListBox listOrder;
         private System.Windows.Forms.Button btnlogout;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

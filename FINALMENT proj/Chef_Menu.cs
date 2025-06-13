@@ -20,7 +20,21 @@ namespace FINALMENT_proj
 
             currentUser = currentuser;
 
-            // Create a User object for the current Manager
+
+            using (SqlConnection _conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;")) 
+            {
+                _conn.Open();
+                string query = "Select OrderID, components, name from Orders inner join Users on Users.username = Orders.username where status = 'waiting'";
+                using (SqlCommand _cmd = new SqlCommand(query, _conn))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(_cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView2.DataSource = table;
+                }
+            }
+
+                // Create a User object for the current Manager
 
             SqlConnection conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;");
             conn.Open();
