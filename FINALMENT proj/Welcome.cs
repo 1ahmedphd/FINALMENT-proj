@@ -32,7 +32,7 @@ namespace FINALMENT_proj
                     username = (int)cmd.ExecuteScalar();
                 }
             }
-            if (username > 0)
+            if (username > 0  || textBox4.Text == "")
             {
                 MessageBox.Show("Invalid Username");
             }
