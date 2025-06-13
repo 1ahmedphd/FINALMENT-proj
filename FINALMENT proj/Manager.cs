@@ -14,7 +14,7 @@ namespace FINALMENT_proj
 {
     public partial class ManagerForm : Form
     {
-        public string _connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+        public string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         private ManagerLogic _managerLogic; // Instance of the ManagerLogic class
         public User currentUser;
         public ManagerForm(User currentuser)

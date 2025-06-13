@@ -15,7 +15,7 @@ namespace FINALMENT_proj
     public partial class Edit_Profile : Form
     {
         public User currentUser;
-        public string connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+        public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Edit_Profile(User currentuser)
         {
             InitializeComponent();

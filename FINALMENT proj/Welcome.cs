@@ -13,7 +13,7 @@ namespace FINALMENT_proj
 {
     public partial class Welcome : Form
     {
-        string connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Welcome()
         {
             InitializeComponent();

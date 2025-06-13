@@ -17,7 +17,7 @@ namespace FINALMENT_proj
 {
     public partial class Admin : Form
     {
-        string connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public User currentUser;
         public Admin(User CurrentUser)
         {

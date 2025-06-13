@@ -46,7 +46,7 @@ namespace FINALMENT_proj
                 menu.Description = txtDesc.Text;
                 menu.Availability = chkAvail.Checked;
 
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True"))
                 {
                     SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Menu] SET [Name] = @Name, [Description] = @Description, " +
                         "[Price] = @Price, [Availability] = @Availability WHERE [FoodID] = @FoodID", conn);
