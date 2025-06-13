@@ -29,5 +29,13 @@ namespace FINALMENT_proj
             IsResponded = isResponded;
             CreatedAt = createdAt;
         }
+        public Feedback(int feedbackID, string username, string feedbackText, string managerResponse, DateTime createdAt)
+        {
+            FeedbackID = feedbackID;
+            Username = username;
+            FeedbackText = feedbackText;
+            ManagerResponse = managerResponse;
+            CreatedAt = createdAt;
+        }
     }
 }

@@ -62,10 +62,9 @@ namespace FINALMENT_proj
                     {
                         feedbackList.Add(new Feedback(
                             Convert.ToInt32(reader["FeedbackID"]),
-                            reader["username"].ToString(),
+                            reader["Customer"].ToString(),
                             reader["FeedbackText"].ToString(),
                             reader["ManagerResponse"]?.ToString(),
-                            Convert.ToBoolean(reader["IsResponded"]),
                             Convert.ToDateTime(reader["CreatedAt"])
                         ));
                     }

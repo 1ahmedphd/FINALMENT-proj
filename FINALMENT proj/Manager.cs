@@ -83,8 +83,7 @@ namespace FINALMENT_proj
                 dataGridViewFeedback.Columns[1].Width = 100;    // username   
                 dataGridViewFeedback.Columns[2].Width = 250;    // FeedbackText
                 dataGridViewFeedback.Columns[3].Width = 250;    // ManagerResponse
-                dataGridViewFeedback.Columns[4].Width = 100;    // IsResponded
-                dataGridViewFeedback.Columns[5].Width = 125;    // CreatedAt
+                dataGridViewFeedback.Columns[4].Width = 125;    // CreatedAt
             }
             catch (Exception ex)
             {
@@ -578,6 +577,13 @@ namespace FINALMENT_proj
                 this.Close();
             }
         }
-    
+
+        private void dataGridViewFeedback_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((dataGridViewFeedback.SelectedCells.Count == 1) && (dataGridViewFeedback.SelectedCells[0].ColumnIndex == 2 || dataGridViewFeedback.SelectedCells[0].ColumnIndex == 3))
+            {
+                MessageBox.Show(dataGridViewFeedback.SelectedCells[0].Value.ToString());
+            }
+        }
     }
 }
