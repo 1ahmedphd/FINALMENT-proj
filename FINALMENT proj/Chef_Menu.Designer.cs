@@ -57,6 +57,7 @@
             this.btnMarkComplete = new System.Windows.Forms.Button();
             this.btnMarkInProgress = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedapMakanDataSet)).BeginInit();
@@ -186,6 +187,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.btnlogout);
             this.tabPage1.Controls.Add(this.btnEditProfile);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -202,9 +204,9 @@
             // btnlogout
             // 
             this.btnlogout.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(473, 495);
+            this.btnlogout.Location = new System.Drawing.Point(486, 508);
             this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(215, 54);
+            this.btnlogout.Size = new System.Drawing.Size(162, 35);
             this.btnlogout.TabIndex = 9;
             this.btnlogout.Text = "Close";
             this.btnlogout.UseVisualStyleBackColor = true;
@@ -213,9 +215,9 @@
             // btnEditProfile
             // 
             this.btnEditProfile.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.Location = new System.Drawing.Point(227, 495);
+            this.btnEditProfile.Location = new System.Drawing.Point(278, 508);
             this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(215, 54);
+            this.btnEditProfile.Size = new System.Drawing.Size(162, 35);
             this.btnEditProfile.TabIndex = 8;
             this.btnEditProfile.Text = "Edit Profile";
             this.btnEditProfile.UseVisualStyleBackColor = true;
@@ -355,6 +357,16 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Welcome Chef";
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(6, 274);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(941, 228);
+            this.listBox1.TabIndex = 15;
+            // 
             // Chef_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,6 +425,7 @@
         private System.Windows.Forms.ListBox listMenu;
         private System.Windows.Forms.ListBox listOrder;
         private System.Windows.Forms.Button btnlogout;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
