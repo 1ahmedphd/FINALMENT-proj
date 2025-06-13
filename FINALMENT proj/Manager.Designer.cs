@@ -188,10 +188,10 @@
             this.tabControlManager.Controls.Add(this.tabPageTopUp);
             this.tabControlManager.Controls.Add(this.tabPageManagerProfile);
             this.tabControlManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlManager.Location = new System.Drawing.Point(0, 39);
+            this.tabControlManager.Location = new System.Drawing.Point(0, 36);
             this.tabControlManager.Name = "tabControlManager";
             this.tabControlManager.SelectedIndex = 0;
-            this.tabControlManager.Size = new System.Drawing.Size(1375, 603);
+            this.tabControlManager.Size = new System.Drawing.Size(1375, 642);
             this.tabControlManager.TabIndex = 11;
             // 
             // tabPageFeedback
@@ -206,7 +206,7 @@
             this.tabPageFeedback.Location = new System.Drawing.Point(4, 25);
             this.tabPageFeedback.Name = "tabPageFeedback";
             this.tabPageFeedback.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFeedback.Size = new System.Drawing.Size(1367, 574);
+            this.tabPageFeedback.Size = new System.Drawing.Size(1367, 613);
             this.tabPageFeedback.TabIndex = 0;
             this.tabPageFeedback.Text = "Feedback";
             // 
@@ -381,7 +381,7 @@
             this.tabPageRefund.Location = new System.Drawing.Point(4, 25);
             this.tabPageRefund.Name = "tabPageRefund";
             this.tabPageRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRefund.Size = new System.Drawing.Size(1367, 574);
+            this.tabPageRefund.Size = new System.Drawing.Size(1367, 613);
             this.tabPageRefund.TabIndex = 1;
             this.tabPageRefund.Text = "Refund";
             // 
@@ -566,7 +566,7 @@
             this.tabPageTopUp.Location = new System.Drawing.Point(4, 25);
             this.tabPageTopUp.Name = "tabPageTopUp";
             this.tabPageTopUp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTopUp.Size = new System.Drawing.Size(1367, 574);
+            this.tabPageTopUp.Size = new System.Drawing.Size(1367, 613);
             this.tabPageTopUp.TabIndex = 2;
             this.tabPageTopUp.Text = "Top-Up";
             // 
@@ -662,7 +662,7 @@
             this.tabPageManagerProfile.Location = new System.Drawing.Point(4, 25);
             this.tabPageManagerProfile.Name = "tabPageManagerProfile";
             this.tabPageManagerProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageManagerProfile.Size = new System.Drawing.Size(1367, 574);
+            this.tabPageManagerProfile.Size = new System.Drawing.Size(1367, 613);
             this.tabPageManagerProfile.TabIndex = 3;
             this.tabPageManagerProfile.Text = "Profile";
             // 
@@ -889,7 +889,7 @@
             // 
             this.lblWelcomeManager.AutoSize = true;
             this.lblWelcomeManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeManager.Location = new System.Drawing.Point(-2, 4);
+            this.lblWelcomeManager.Location = new System.Drawing.Point(0, 3);
             this.lblWelcomeManager.Name = "lblWelcomeManager";
             this.lblWelcomeManager.Size = new System.Drawing.Size(156, 32);
             this.lblWelcomeManager.TabIndex = 12;
@@ -899,7 +899,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 642);
+            this.ClientSize = new System.Drawing.Size(1375, 676);
             this.Controls.Add(this.lblWelcomeManager);
             this.Controls.Add(this.tabControlManager);
             this.Name = "ManagerForm";
