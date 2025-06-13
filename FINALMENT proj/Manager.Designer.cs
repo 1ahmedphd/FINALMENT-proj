@@ -419,6 +419,7 @@
             this.dataGridViewRefunds.RowTemplate.Height = 24;
             this.dataGridViewRefunds.Size = new System.Drawing.Size(1361, 445);
             this.dataGridViewRefunds.TabIndex = 17;
+            this.dataGridViewRefunds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRefunds_CellClick);
             this.dataGridViewRefunds.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRefunds_RowHeaderMouseDoubleClick);
             // 
             // requestIDDataGridViewTextBoxColumn

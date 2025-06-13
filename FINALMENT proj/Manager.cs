@@ -596,7 +596,7 @@ private void LoadFeedback()
             try
             {
                 string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
                 {
                     MessageBox.Show(cellValue);
                 }
@@ -621,6 +621,22 @@ private void LoadFeedback()
             {
                 MessageBox.Show("One or more selected feedbacks have already been responded to.");
                 LoadFeedback();
+            }
+        }
+
+        private void dataGridViewRefunds_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string cellValue = dataGridViewRefunds.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
+                {
+                    MessageBox.Show(cellValue);
+                }
+            }
+            catch
+            {
+                throw new NotImplementedException();
             }
         }
     }
