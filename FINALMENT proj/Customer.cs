@@ -591,10 +591,21 @@ namespace FINALMENT_proj
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Welcome welcome = new Welcome();
-            welcome.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show(
+    "Are you sure you want to log out?",
+    "Confirm Logout",
+    MessageBoxButtons.YesNo,
+    MessageBoxIcon.Question
+);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Welcome welcome = new Welcome();
+                welcome.ShowDialog();
+                this.Close();
+            }
+            
         }
     }
 }
