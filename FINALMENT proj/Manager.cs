@@ -31,6 +31,7 @@ namespace FINALMENT_proj
             LoadUsernames(); // Populate the ListBox for the usernames to top up
             currentUser = currentuser;
             #region update manager profile
+            lblWelcomeManager.Text = lblWelcomeManager.Text + currentUser.name;
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 string query = "Select Bio from Users where Username = @username";
