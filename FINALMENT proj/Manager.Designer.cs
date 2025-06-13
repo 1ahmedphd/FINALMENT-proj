@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtManagerResponse = new System.Windows.Forms.TextBox();
             this.btnRespond = new System.Windows.Forms.Button();
             this.rbApprove = new System.Windows.Forms.RadioButton();
@@ -84,22 +84,23 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.feedbackTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.FeedbackTableAdapter();
             this.refundRequestsTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.RefundRequestsTableAdapter();
+            this.lblWelcomeManager = new System.Windows.Forms.Label();
             this.tabControlManager.SuspendLayout();
             this.tabPageFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeedback)).BeginInit();
@@ -118,17 +119,18 @@
             // 
             // txtManagerResponse
             // 
-            this.txtManagerResponse.BackColor = System.Drawing.SystemColors.Info;
-            this.txtManagerResponse.Location = new System.Drawing.Point(183, 327);
+            this.txtManagerResponse.BackColor = System.Drawing.SystemColors.Window;
+            this.txtManagerResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManagerResponse.Location = new System.Drawing.Point(218, 454);
             this.txtManagerResponse.Multiline = true;
             this.txtManagerResponse.Name = "txtManagerResponse";
-            this.txtManagerResponse.Size = new System.Drawing.Size(499, 72);
+            this.txtManagerResponse.Size = new System.Drawing.Size(543, 104);
             this.txtManagerResponse.TabIndex = 1;
             // 
             // btnRespond
             // 
             this.btnRespond.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRespond.Location = new System.Drawing.Point(697, 327);
+            this.btnRespond.Location = new System.Drawing.Point(769, 454);
             this.btnRespond.Name = "btnRespond";
             this.btnRespond.Size = new System.Drawing.Size(146, 54);
             this.btnRespond.TabIndex = 2;
@@ -139,10 +141,10 @@
             // rbApprove
             // 
             this.rbApprove.AutoSize = true;
-            this.rbApprove.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbApprove.Location = new System.Drawing.Point(8, 327);
+            this.rbApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbApprove.Location = new System.Drawing.Point(8, 454);
             this.rbApprove.Name = "rbApprove";
-            this.rbApprove.Size = new System.Drawing.Size(106, 25);
+            this.rbApprove.Size = new System.Drawing.Size(131, 33);
             this.rbApprove.TabIndex = 7;
             this.rbApprove.Text = "Approve";
             this.rbApprove.UseVisualStyleBackColor = true;
@@ -150,10 +152,10 @@
             // rbReject
             // 
             this.rbReject.AutoSize = true;
-            this.rbReject.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbReject.Location = new System.Drawing.Point(122, 327);
+            this.rbReject.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbReject.Location = new System.Drawing.Point(145, 454);
             this.rbReject.Name = "rbReject";
-            this.rbReject.Size = new System.Drawing.Size(88, 25);
+            this.rbReject.Size = new System.Drawing.Size(109, 33);
             this.rbReject.TabIndex = 8;
             this.rbReject.Text = "Reject";
             this.rbReject.UseVisualStyleBackColor = true;
@@ -161,7 +163,7 @@
             // btnUpdateRefund
             // 
             this.btnUpdateRefund.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateRefund.Location = new System.Drawing.Point(225, 327);
+            this.btnUpdateRefund.Location = new System.Drawing.Point(262, 454);
             this.btnUpdateRefund.Name = "btnUpdateRefund";
             this.btnUpdateRefund.Size = new System.Drawing.Size(146, 54);
             this.btnUpdateRefund.TabIndex = 9;
@@ -172,10 +174,10 @@
             // lblResponse
             // 
             this.lblResponse.AutoSize = true;
-            this.lblResponse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResponse.Location = new System.Drawing.Point(9, 327);
+            this.lblResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResponse.Location = new System.Drawing.Point(8, 454);
             this.lblResponse.Name = "lblResponse";
-            this.lblResponse.Size = new System.Drawing.Size(152, 21);
+            this.lblResponse.Size = new System.Drawing.Size(204, 29);
             this.lblResponse.TabIndex = 10;
             this.lblResponse.Text = "Type Response:";
             // 
@@ -185,9 +187,8 @@
             this.tabControlManager.Controls.Add(this.tabPageRefund);
             this.tabControlManager.Controls.Add(this.tabPageTopUp);
             this.tabControlManager.Controls.Add(this.tabPageManagerProfile);
-            this.tabControlManager.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlManager.Location = new System.Drawing.Point(0, 0);
+            this.tabControlManager.Location = new System.Drawing.Point(0, 36);
             this.tabControlManager.Name = "tabControlManager";
             this.tabControlManager.SelectedIndex = 0;
             this.tabControlManager.Size = new System.Drawing.Size(1375, 642);
@@ -195,7 +196,7 @@
             // 
             // tabPageFeedback
             // 
-            this.tabPageFeedback.BackColor = System.Drawing.Color.Gold;
+            this.tabPageFeedback.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.tabPageFeedback.Controls.Add(this.dataGridViewFeedback);
             this.tabPageFeedback.Controls.Add(this.btnRefresh);
             this.tabPageFeedback.Controls.Add(this.gbFilter);
@@ -205,7 +206,7 @@
             this.tabPageFeedback.Location = new System.Drawing.Point(4, 25);
             this.tabPageFeedback.Name = "tabPageFeedback";
             this.tabPageFeedback.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFeedback.Size = new System.Drawing.Size(1246, 421);
+            this.tabPageFeedback.Size = new System.Drawing.Size(1367, 613);
             this.tabPageFeedback.TabIndex = 0;
             this.tabPageFeedback.Text = "Feedback";
             // 
@@ -215,15 +216,15 @@
             this.dataGridViewFeedback.AllowUserToResizeRows = false;
             this.dataGridViewFeedback.AutoGenerateColumns = false;
             this.dataGridViewFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewFeedback.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewFeedback.BackgroundColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFeedback.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFeedback.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.feedbackIDDataGridViewTextBoxColumn,
@@ -233,21 +234,21 @@
             this.isRespondedDataGridViewCheckBoxColumn,
             this.createdAtDataGridViewTextBoxColumn});
             this.dataGridViewFeedback.DataSource = this.feedbackBindingSource;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewFeedback.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewFeedback.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewFeedback.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewFeedback.Name = "dataGridViewFeedback";
             this.dataGridViewFeedback.ReadOnly = true;
             this.dataGridViewFeedback.RowHeadersWidth = 51;
             this.dataGridViewFeedback.RowTemplate.Height = 24;
-            this.dataGridViewFeedback.Size = new System.Drawing.Size(1240, 318);
+            this.dataGridViewFeedback.Size = new System.Drawing.Size(1361, 445);
             this.dataGridViewFeedback.TabIndex = 16;
             this.dataGridViewFeedback.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewFeedback_RowHeaderMouseDoubleClick);
             // 
@@ -312,7 +313,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(849, 327);
+            this.btnRefresh.Location = new System.Drawing.Point(921, 454);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(146, 54);
             this.btnRefresh.TabIndex = 15;
@@ -325,10 +326,10 @@
             this.gbFilter.Controls.Add(this.rbUnresponded);
             this.gbFilter.Controls.Add(this.rbAll);
             this.gbFilter.Controls.Add(this.rbResponded);
-            this.gbFilter.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFilter.Location = new System.Drawing.Point(1091, 323);
+            this.gbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFilter.Location = new System.Drawing.Point(1187, 454);
             this.gbFilter.Name = "gbFilter";
-            this.gbFilter.Size = new System.Drawing.Size(147, 92);
+            this.gbFilter.Size = new System.Drawing.Size(172, 114);
             this.gbFilter.TabIndex = 14;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
@@ -339,7 +340,7 @@
             this.rbUnresponded.Checked = true;
             this.rbUnresponded.Location = new System.Drawing.Point(6, 19);
             this.rbUnresponded.Name = "rbUnresponded";
-            this.rbUnresponded.Size = new System.Drawing.Size(112, 20);
+            this.rbUnresponded.Size = new System.Drawing.Size(162, 29);
             this.rbUnresponded.TabIndex = 11;
             this.rbUnresponded.TabStop = true;
             this.rbUnresponded.Text = "Unresponded";
@@ -349,9 +350,9 @@
             // rbAll
             // 
             this.rbAll.AutoSize = true;
-            this.rbAll.Location = new System.Drawing.Point(6, 62);
+            this.rbAll.Location = new System.Drawing.Point(6, 75);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(45, 20);
+            this.rbAll.Size = new System.Drawing.Size(58, 29);
             this.rbAll.TabIndex = 13;
             this.rbAll.Text = "All";
             this.rbAll.UseVisualStyleBackColor = true;
@@ -360,9 +361,9 @@
             // rbResponded
             // 
             this.rbResponded.AutoSize = true;
-            this.rbResponded.Location = new System.Drawing.Point(6, 40);
+            this.rbResponded.Location = new System.Drawing.Point(6, 47);
             this.rbResponded.Name = "rbResponded";
-            this.rbResponded.Size = new System.Drawing.Size(99, 20);
+            this.rbResponded.Size = new System.Drawing.Size(142, 29);
             this.rbResponded.TabIndex = 12;
             this.rbResponded.Text = "Responded";
             this.rbResponded.UseVisualStyleBackColor = true;
@@ -370,7 +371,7 @@
             // 
             // tabPageRefund
             // 
-            this.tabPageRefund.BackColor = System.Drawing.Color.Gold;
+            this.tabPageRefund.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.tabPageRefund.Controls.Add(this.dataGridViewRefunds);
             this.tabPageRefund.Controls.Add(this.btnRefresh2);
             this.tabPageRefund.Controls.Add(this.gbFilter2);
@@ -380,7 +381,7 @@
             this.tabPageRefund.Location = new System.Drawing.Point(4, 25);
             this.tabPageRefund.Name = "tabPageRefund";
             this.tabPageRefund.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRefund.Size = new System.Drawing.Size(1246, 421);
+            this.tabPageRefund.Size = new System.Drawing.Size(1367, 613);
             this.tabPageRefund.TabIndex = 1;
             this.tabPageRefund.Text = "Refund";
             // 
@@ -390,15 +391,15 @@
             this.dataGridViewRefunds.AllowUserToResizeRows = false;
             this.dataGridViewRefunds.AutoGenerateColumns = false;
             this.dataGridViewRefunds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewRefunds.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewRefunds.BackgroundColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRefunds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewRefunds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRefunds.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.requestIDDataGridViewTextBoxColumn,
@@ -408,21 +409,21 @@
             this.statusDataGridViewTextBoxColumn,
             this.reviewedAtDataGridViewTextBoxColumn});
             this.dataGridViewRefunds.DataSource = this.refundRequestsBindingSource;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRefunds.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewRefunds.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewRefunds.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewRefunds.Name = "dataGridViewRefunds";
             this.dataGridViewRefunds.ReadOnly = true;
             this.dataGridViewRefunds.RowHeadersWidth = 51;
             this.dataGridViewRefunds.RowTemplate.Height = 24;
-            this.dataGridViewRefunds.Size = new System.Drawing.Size(1240, 318);
+            this.dataGridViewRefunds.Size = new System.Drawing.Size(1361, 445);
             this.dataGridViewRefunds.TabIndex = 17;
             this.dataGridViewRefunds.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewRefunds_RowHeaderMouseDoubleClick);
             // 
@@ -482,7 +483,7 @@
             // btnRefresh2
             // 
             this.btnRefresh2.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh2.Location = new System.Drawing.Point(377, 327);
+            this.btnRefresh2.Location = new System.Drawing.Point(414, 454);
             this.btnRefresh2.Name = "btnRefresh2";
             this.btnRefresh2.Size = new System.Drawing.Size(146, 54);
             this.btnRefresh2.TabIndex = 16;
@@ -496,10 +497,10 @@
             this.gbFilter2.Controls.Add(this.rbPending);
             this.gbFilter2.Controls.Add(this.rbRejected);
             this.gbFilter2.Controls.Add(this.rbApproved);
-            this.gbFilter2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFilter2.Location = new System.Drawing.Point(1031, 323);
+            this.gbFilter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFilter2.Location = new System.Drawing.Point(1106, 454);
             this.gbFilter2.Name = "gbFilter2";
-            this.gbFilter2.Size = new System.Drawing.Size(207, 92);
+            this.gbFilter2.Size = new System.Drawing.Size(253, 100);
             this.gbFilter2.TabIndex = 15;
             this.gbFilter2.TabStop = false;
             this.gbFilter2.Text = "Filter";
@@ -509,7 +510,7 @@
             this.rbAll2.AutoSize = true;
             this.rbAll2.Location = new System.Drawing.Point(6, 60);
             this.rbAll2.Name = "rbAll2";
-            this.rbAll2.Size = new System.Drawing.Size(45, 20);
+            this.rbAll2.Size = new System.Drawing.Size(58, 29);
             this.rbAll2.TabIndex = 14;
             this.rbAll2.TabStop = true;
             this.rbAll2.Text = "All";
@@ -522,7 +523,7 @@
             this.rbPending.Checked = true;
             this.rbPending.Location = new System.Drawing.Point(6, 25);
             this.rbPending.Name = "rbPending";
-            this.rbPending.Size = new System.Drawing.Size(81, 20);
+            this.rbPending.Size = new System.Drawing.Size(112, 29);
             this.rbPending.TabIndex = 11;
             this.rbPending.TabStop = true;
             this.rbPending.Text = "Pending";
@@ -532,9 +533,9 @@
             // rbRejected
             // 
             this.rbRejected.AutoSize = true;
-            this.rbRejected.Location = new System.Drawing.Point(99, 60);
+            this.rbRejected.Location = new System.Drawing.Point(124, 60);
             this.rbRejected.Name = "rbRejected";
-            this.rbRejected.Size = new System.Drawing.Size(84, 20);
+            this.rbRejected.Size = new System.Drawing.Size(117, 29);
             this.rbRejected.TabIndex = 13;
             this.rbRejected.Text = "Rejected";
             this.rbRejected.UseVisualStyleBackColor = true;
@@ -543,9 +544,9 @@
             // rbApproved
             // 
             this.rbApproved.AutoSize = true;
-            this.rbApproved.Location = new System.Drawing.Point(99, 25);
+            this.rbApproved.Location = new System.Drawing.Point(124, 25);
             this.rbApproved.Name = "rbApproved";
-            this.rbApproved.Size = new System.Drawing.Size(89, 20);
+            this.rbApproved.Size = new System.Drawing.Size(126, 29);
             this.rbApproved.TabIndex = 12;
             this.rbApproved.Text = "Approved";
             this.rbApproved.UseVisualStyleBackColor = true;
@@ -553,7 +554,7 @@
             // 
             // tabPageTopUp
             // 
-            this.tabPageTopUp.BackColor = System.Drawing.Color.Gold;
+            this.tabPageTopUp.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.tabPageTopUp.Controls.Add(this.lbUsername);
             this.tabPageTopUp.Controls.Add(this.btnClear);
             this.tabPageTopUp.Controls.Add(this.lblName2);
@@ -565,25 +566,26 @@
             this.tabPageTopUp.Location = new System.Drawing.Point(4, 25);
             this.tabPageTopUp.Name = "tabPageTopUp";
             this.tabPageTopUp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTopUp.Size = new System.Drawing.Size(1246, 421);
+            this.tabPageTopUp.Size = new System.Drawing.Size(1367, 613);
             this.tabPageTopUp.TabIndex = 2;
             this.tabPageTopUp.Text = "Top-Up";
             // 
             // lbUsername
             // 
-            this.lbUsername.BackColor = System.Drawing.SystemColors.Info;
+            this.lbUsername.BackColor = System.Drawing.Color.Khaki;
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.FormattingEnabled = true;
-            this.lbUsername.ItemHeight = 16;
-            this.lbUsername.Location = new System.Drawing.Point(235, 81);
+            this.lbUsername.ItemHeight = 36;
+            this.lbUsername.Location = new System.Drawing.Point(215, 64);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(232, 244);
+            this.lbUsername.Size = new System.Drawing.Size(421, 472);
             this.lbUsername.TabIndex = 14;
             this.lbUsername.SelectedIndexChanged += new System.EventHandler(this.lbUsername_SelectedIndexChanged);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(886, 266);
+            this.btnClear.Location = new System.Drawing.Point(1013, 348);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(143, 59);
             this.btnClear.TabIndex = 13;
@@ -594,47 +596,47 @@
             // lblName2
             // 
             this.lblName2.AutoSize = true;
-            this.lblName2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName2.Location = new System.Drawing.Point(812, 81);
+            this.lblName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName2.Location = new System.Drawing.Point(951, 116);
             this.lblName2.Name = "lblName2";
-            this.lblName2.Size = new System.Drawing.Size(42, 23);
+            this.lblName2.Size = new System.Drawing.Size(66, 36);
             this.lblName2.TabIndex = 12;
             this.lblName2.Text = "N/A";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(682, 83);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(840, 116);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(68, 21);
+            this.lblName.Size = new System.Drawing.Size(105, 36);
             this.lblName.TabIndex = 11;
             this.lblName.Text = "Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(597, 174);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(696, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 21);
+            this.label1.Size = new System.Drawing.Size(249, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "Top-Up Amount:";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(108, 81);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(33, 64);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(108, 21);
+            this.lblUsername.Size = new System.Drawing.Size(167, 36);
             this.lblUsername.TabIndex = 8;
             this.lblUsername.Text = "Username:";
             // 
             // btnTopUp
             // 
             this.btnTopUp.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTopUp.Location = new System.Drawing.Point(656, 266);
+            this.btnTopUp.Location = new System.Drawing.Point(802, 348);
             this.btnTopUp.Name = "btnTopUp";
             this.btnTopUp.Size = new System.Drawing.Size(143, 59);
             this.btnTopUp.TabIndex = 7;
@@ -644,15 +646,16 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAmount.Location = new System.Drawing.Point(816, 175);
+            this.txtAmount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(957, 207);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(270, 22);
+            this.txtAmount.Size = new System.Drawing.Size(270, 41);
             this.txtAmount.TabIndex = 6;
             // 
             // tabPageManagerProfile
             // 
-            this.tabPageManagerProfile.BackColor = System.Drawing.Color.MistyRose;
+            this.tabPageManagerProfile.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.tabPageManagerProfile.Controls.Add(this.button1);
             this.tabPageManagerProfile.Controls.Add(this.groupBox2);
             this.tabPageManagerProfile.Controls.Add(this.groupBox1);
@@ -677,7 +680,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox2.BackColor = System.Drawing.Color.Khaki;
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
@@ -713,6 +716,15 @@
             this.textBox4.Size = new System.Drawing.Size(624, 45);
             this.textBox4.TabIndex = 11;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(432, 61);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(624, 45);
+            this.textBox3.TabIndex = 10;
+            // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -725,48 +737,42 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(432, 61);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(624, 45);
-            this.textBox3.TabIndex = 10;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 194);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 194);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(413, 39);
+            this.label10.Size = new System.Drawing.Size(378, 38);
             this.label10.TabIndex = 9;
             this.label10.Text = "Confirm New Password: ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(145, 129);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(277, 39);
+            this.label9.Size = new System.Drawing.Size(255, 38);
             this.label9.TabIndex = 8;
             this.label9.Text = "New Password: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(157, 64);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(161, 64);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(261, 39);
+            this.label8.Size = new System.Drawing.Size(240, 38);
             this.label8.TabIndex = 7;
             this.label8.Text = "Old Password: ";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox1.BackColor = System.Drawing.Color.Khaki;
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.richTextBox3);
@@ -803,6 +809,27 @@
             this.textBox6.Size = new System.Drawing.Size(449, 45);
             this.textBox6.TabIndex = 13;
             // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(769, 53);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(447, 189);
+            this.richTextBox3.TabIndex = 4;
+            this.richTextBox3.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(690, 53);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 38);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Bio: ";
+            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -828,44 +855,25 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(769, 53);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(447, 189);
-            this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(690, 53);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 39);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Bio: ";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 139);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(11, 139);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 39);
+            this.label6.Size = new System.Drawing.Size(186, 38);
             this.label6.TabIndex = 1;
             this.label6.Text = "Username: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(77, 59);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(77, 62);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 39);
+            this.label5.Size = new System.Drawing.Size(122, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Name: ";
             // 
@@ -877,11 +885,22 @@
             // 
             this.refundRequestsTableAdapter.ClearBeforeFill = true;
             // 
+            // lblWelcomeManager
+            // 
+            this.lblWelcomeManager.AutoSize = true;
+            this.lblWelcomeManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeManager.Location = new System.Drawing.Point(0, 3);
+            this.lblWelcomeManager.Name = "lblWelcomeManager";
+            this.lblWelcomeManager.Size = new System.Drawing.Size(156, 32);
+            this.lblWelcomeManager.TabIndex = 12;
+            this.lblWelcomeManager.Text = "Welcome, ";
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 642);
+            this.ClientSize = new System.Drawing.Size(1375, 676);
+            this.Controls.Add(this.lblWelcomeManager);
             this.Controls.Add(this.tabControlManager);
             this.Name = "ManagerForm";
             this.Text = "Manager";
@@ -908,6 +927,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -949,8 +969,6 @@
         private IOOPGADataSetTableAdapters.FeedbackTableAdapter feedbackTableAdapter;
         private System.Windows.Forms.BindingSource refundRequestsBindingSource;
         private IOOPGADataSetTableAdapters.RefundRequestsTableAdapter refundRequestsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username1;
         private System.Windows.Forms.DataGridViewTextBoxColumn requestIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
@@ -981,6 +999,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblWelcomeManager;
     }
 }
 

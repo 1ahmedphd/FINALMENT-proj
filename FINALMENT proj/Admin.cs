@@ -42,7 +42,7 @@ namespace FINALMENT_proj
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);
                     object result = cmd.ExecuteScalar();
-                    richTextBox3.Text = result != null ? result.ToString() : null;
+                    richTextBox2.Text = result != null ? result.ToString() : null;
                 }
             }
 
@@ -219,7 +219,7 @@ namespace FINALMENT_proj
             {
                 conn.Open();
                 string query = "Delete from Users where username = @username";
-                using (SqlCommand cmd = new SqlCommand(query, conn)) 
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", originalUsername);
                     cmd.ExecuteNonQuery();
@@ -234,7 +234,7 @@ namespace FINALMENT_proj
             button5.Visible = true;
             textBox6.ReadOnly = false;
             textBox7.ReadOnly = false;
-            richTextBox3.ReadOnly = false;
+            richTextBox2.ReadOnly = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace FINALMENT_proj
                 {
                     cmd.Parameters.AddWithValue("@name", textBox6.Text);
                     cmd.Parameters.AddWithValue("@username", textBox7.Text);
-                    cmd.Parameters.AddWithValue("@bio", richTextBox3.Text);
+                    cmd.Parameters.AddWithValue("@bio", richTextBox2.Text);
                     cmd.Parameters.AddWithValue("@original", originalUsername);
                     cmd.ExecuteNonQuery();
                 }
@@ -258,7 +258,7 @@ namespace FINALMENT_proj
             button5.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
-            richTextBox3.ReadOnly = true;
+            richTextBox2.ReadOnly = true;
 
         }
 
@@ -294,7 +294,7 @@ namespace FINALMENT_proj
             {
                 MessageBox.Show("Incorrect password");
             }
-            else 
+            else
             {
                 MessageBox.Show("Passwords don't match");
             }
@@ -316,11 +316,11 @@ namespace FINALMENT_proj
 
             if (comboBox4.SelectedIndex > -1)
             {
-                query = query + " and chef = " + "'" +comboBox4.SelectedItem.ToString() + "'";
+                query = query + " and chef = " + "'" + comboBox4.SelectedItem.ToString() + "'";
             }
 
             using (SqlConnection conn = new SqlConnection(connectionString))
-            { 
+            {
                 conn.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
@@ -357,31 +357,22 @@ namespace FINALMENT_proj
                 dataGridView3.DataSource = table;
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Welcome welcome = new Welcome();
-            welcome.ShowDialog();
-            this.Close();
-        }
+            DialogResult result = MessageBox.Show(
+    "Are you sure you want to log out?",
+    "Confirm Logout",
+    MessageBoxButtons.YesNo,
+    MessageBoxIcon.Question
+);
 
-        private void button9_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Welcome welcome = new Welcome();
-            welcome.ShowDialog();
-            this.Close();
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Welcome welcome = new Welcome();
+                welcome.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

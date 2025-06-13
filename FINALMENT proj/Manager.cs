@@ -31,6 +31,7 @@ namespace FINALMENT_proj
             LoadUsernames(); // Populate the ListBox for the usernames to top up
             currentUser = currentuser;
             #region update manager profile
+            lblWelcomeManager.Text = lblWelcomeManager.Text + currentUser.name;
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 string query = "Select Bio from Users where Username = @username";
@@ -240,7 +241,7 @@ namespace FINALMENT_proj
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading refund requests: {ex.Message}");
+                MessageBox.Show($"Error loading refund requests: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void UncheckRefundRbs()
@@ -277,7 +278,7 @@ namespace FINALMENT_proj
             // Validate if at least one row is selected
             if (dataGridViewRefunds.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select at least one refund request to update.");
+                MessageBox.Show("Please select at least one refund request to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -299,14 +300,14 @@ namespace FINALMENT_proj
                 // If any selected refund request has already been updated, show a message and stop
                 if (hasProcessed)
                 {
-                    MessageBox.Show("One or more selected refund requests have already been updated.");
+                    MessageBox.Show("One or more selected refund requests have already been updated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
                 // Validate the status selection
                 if (!rbApprove.Checked && !rbReject.Checked)
                 {
-                    MessageBox.Show("Please select either Approve or Reject.");
+                    MessageBox.Show("Please select either Approve or Reject.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -345,12 +346,12 @@ namespace FINALMENT_proj
                     // Reload refunds to reflect changes
                     LoadRefunds();
 
-                    MessageBox.Show("Refund request(s) updated successfully!");
+                    MessageBox.Show("Refund request(s) updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating refund request: {ex.Message}");
+                MessageBox.Show($"Error updating refund request: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -377,7 +378,7 @@ namespace FINALMENT_proj
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading usernames: {ex.Message}");
+                MessageBox.Show($"Error loading usernames: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void lbUsername_SelectedIndexChanged(object sender, EventArgs e)
@@ -402,7 +403,7 @@ namespace FINALMENT_proj
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error fetching name: {ex.Message}");
+                MessageBox.Show($"Error fetching name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -418,19 +419,19 @@ namespace FINALMENT_proj
             // Validate inputs
             if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Please select a valid username.");
+                MessageBox.Show("Please select a valid username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (!decimal.TryParse(txtAmount.Text, out amount) || amount <= 0)
             {
-                MessageBox.Show("Please enter a valid positive amount.");
+                MessageBox.Show("Please enter a valid positive amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             // Show confirmation dialog
             DialogResult result = MessageBox.Show(
-                $"Are you sure you want to top up {amount:C} to the selected user ({username} - {name})?",
+                $"Are you sure you want to top up RM {amount} to the selected user ({username} - {name})?",
                 "Confirmation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -443,11 +444,11 @@ namespace FINALMENT_proj
                     // Call the backend method
                     _managerLogic.TopUpEwallet(username, amount);
 
-                    MessageBox.Show($"Successfully topped up {amount:C} for user {username}.");
+                    MessageBox.Show($"Successfully topped up RM {amount} for user {username}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error topping up e-wallet: {ex.Message}");
+                    MessageBox.Show($"Error topping up e-wallet: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -523,7 +524,7 @@ namespace FINALMENT_proj
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                string sqlQuery = "Select password FROM Users Where Username = @username";
+                string sqlQuery = "Select password from Users Where Username = @username";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);
@@ -544,25 +545,35 @@ namespace FINALMENT_proj
                         cmd.ExecuteNonQuery();
                     }
                 }
-                MessageBox.Show("Updated password");
+                MessageBox.Show("Updated password", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (password != textBox3.Text)
             {
-                MessageBox.Show("Incorrect password");
+                MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Passwords don't match");
+                MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Welcome welcome = new Welcome();
-            welcome.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show(
+    "Are you sure you want to log out?",
+    "Confirm Logout",
+    MessageBoxButtons.YesNo,
+    MessageBoxIcon.Question
+);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Welcome welcome = new Welcome();
+                welcome.ShowDialog();
+                this.Close();
+            }
         }
     
     }
