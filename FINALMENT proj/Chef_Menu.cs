@@ -21,7 +21,7 @@ namespace FINALMENT_proj
             currentUser = currentuser;
 
 
-            using (SqlConnection _conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;")) 
+            using (SqlConnection _conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True")) 
             {
                 _conn.Open();
                 string query = "Select OrderID, components, name from Orders inner join Users on Users.username = Orders.username where status = 'waiting'";
@@ -36,7 +36,7 @@ namespace FINALMENT_proj
 
                 // Create a User object for the current Manager
 
-            SqlConnection conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT FoodID, Name FROM [Menu] ", conn);
 
@@ -52,7 +52,7 @@ namespace FINALMENT_proj
 
             conn.Close();
 
-            SqlConnection connt = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;");
+            SqlConnection connt = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
             conn.Open();
             SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting'", connt);
 
@@ -138,7 +138,7 @@ namespace FINALMENT_proj
                     int empid = int.Parse(listMenu.SelectedValue.ToString());
 
                     // Connection string - ideally move to App.config or static class
-                    string connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+                    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {

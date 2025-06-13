@@ -18,7 +18,7 @@ namespace FINALMENT_proj
     {
         Random rand = new Random();
         List<string> chefs = new List<string>();
-        string connectionString = "Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public User currentUser;
         public double balance;
         public string generatedOrderID;
