@@ -46,7 +46,6 @@
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedbackTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.managerResponseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isRespondedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.createdAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedbackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iOOPGADataSet = new FINALMENT_proj.IOOPGADataSet();
@@ -101,6 +100,8 @@
             this.feedbackTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.FeedbackTableAdapter();
             this.refundRequestsTableAdapter = new FINALMENT_proj.IOOPGADataSetTableAdapters.RefundRequestsTableAdapter();
             this.lblWelcomeManager = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblBalance2 = new System.Windows.Forms.Label();
             this.tabControlManager.SuspendLayout();
             this.tabPageFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFeedback)).BeginInit();
@@ -231,7 +232,6 @@
             this.usernameDataGridViewTextBoxColumn,
             this.feedbackTextDataGridViewTextBoxColumn,
             this.managerResponseDataGridViewTextBoxColumn,
-            this.isRespondedDataGridViewCheckBoxColumn,
             this.createdAtDataGridViewTextBoxColumn});
             this.dataGridViewFeedback.DataSource = this.feedbackBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -263,7 +263,7 @@
             // usernameDataGridViewTextBoxColumn
             // 
             this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Customer";
             this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
             this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -283,14 +283,6 @@
             this.managerResponseDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.managerResponseDataGridViewTextBoxColumn.Name = "managerResponseDataGridViewTextBoxColumn";
             this.managerResponseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isRespondedDataGridViewCheckBoxColumn
-            // 
-            this.isRespondedDataGridViewCheckBoxColumn.DataPropertyName = "IsResponded";
-            this.isRespondedDataGridViewCheckBoxColumn.HeaderText = "IsResponded";
-            this.isRespondedDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.isRespondedDataGridViewCheckBoxColumn.Name = "isRespondedDataGridViewCheckBoxColumn";
-            this.isRespondedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // createdAtDataGridViewTextBoxColumn
             // 
@@ -555,6 +547,8 @@
             // tabPageTopUp
             // 
             this.tabPageTopUp.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.tabPageTopUp.Controls.Add(this.lblBalance2);
+            this.tabPageTopUp.Controls.Add(this.lblBalance);
             this.tabPageTopUp.Controls.Add(this.lbUsername);
             this.tabPageTopUp.Controls.Add(this.btnClear);
             this.tabPageTopUp.Controls.Add(this.lblName2);
@@ -585,7 +579,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(1013, 348);
+            this.btnClear.Location = new System.Drawing.Point(1013, 440);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(143, 59);
             this.btnClear.TabIndex = 13;
@@ -617,7 +611,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(696, 210);
+            this.label1.Location = new System.Drawing.Point(696, 296);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 36);
             this.label1.TabIndex = 9;
@@ -636,7 +630,7 @@
             // btnTopUp
             // 
             this.btnTopUp.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTopUp.Location = new System.Drawing.Point(802, 348);
+            this.btnTopUp.Location = new System.Drawing.Point(802, 440);
             this.btnTopUp.Name = "btnTopUp";
             this.btnTopUp.Size = new System.Drawing.Size(143, 59);
             this.btnTopUp.TabIndex = 7;
@@ -648,7 +642,7 @@
             // 
             this.txtAmount.BackColor = System.Drawing.SystemColors.Window;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(957, 207);
+            this.txtAmount.Location = new System.Drawing.Point(957, 293);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(270, 41);
             this.txtAmount.TabIndex = 6;
@@ -895,6 +889,25 @@
             this.lblWelcomeManager.TabIndex = 12;
             this.lblWelcomeManager.Text = "Welcome, ";
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Location = new System.Drawing.Point(871, 213);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(60, 16);
+            this.lblBalance.TabIndex = 15;
+            this.lblBalance.Text = "Balance:";
+            // 
+            // lblBalance2
+            // 
+            this.lblBalance2.AutoSize = true;
+            this.lblBalance2.ForeColor = System.Drawing.Color.Green;
+            this.lblBalance2.Location = new System.Drawing.Point(964, 213);
+            this.lblBalance2.Name = "lblBalance2";
+            this.lblBalance2.Size = new System.Drawing.Size(44, 16);
+            this.lblBalance2.TabIndex = 16;
+            this.lblBalance2.Text = "label2";
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -975,12 +988,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reviewedAtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feedbackIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feedbackTextDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn managerResponseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isRespondedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdAtDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -1000,6 +1007,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblWelcomeManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feedbackIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feedbackTextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn managerResponseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblBalance2;
+        private System.Windows.Forms.Label lblBalance;
     }
 }
 

@@ -392,13 +392,16 @@ namespace FINALMENT_proj
                 {
                     // Fetch the name corresponding to the selected username
                     string name = _managerLogic.GetUserName(selectedUsername);
+                    string balance = _managerLogic.GetBalance(selectedUsername);
 
                     // Update the Name label
                     lblName2.Text = name;
+                    lblBalance2.Text = balance;
                 }
                 else
                 {
                     lblName2.Text = string.Empty; // Clear the label if no username is selected
+                    lblBalance2.Text = string.Empty;
                 }
             }
             catch (Exception ex)

@@ -40,14 +40,14 @@ namespace FINALMENT_proj
             switch (filter.ToLower())
             {
                 case "unresponded":
-                    query = "SELECT * FROM Feedback WHERE IsResponded = 0";
+                    query = "SELECT FeedbackID, username AS Customer, FeedbackText, ManagerResponse, CreatedAt FROM Feedback WHERE IsResponded = 0";
                     break;
                 case "responded":
-                    query = "SELECT * FROM Feedback WHERE IsResponded = 1";
+                    query = "SELECT FeedbackID, username AS Customer, FeedbackText, ManagerResponse, CreatedAt FROM Feedback WHERE IsResponded = 1";
                     break;
                 case "all":
                 default:
-                    query = "SELECT * FROM Feedback";
+                    query = "SELECT FeedbackID, username AS Customer, FeedbackText, ManagerResponse, CreatedAt FROM Feedback";
                     break;
             }
             try
@@ -285,6 +285,18 @@ namespace FINALMENT_proj
             catch (Exception ex)
             {
                 throw new Exception("Error fetching user name: " + ex.Message);
+            }
+        }
+        public string GetBalance(string username)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "Select balance from Users where username = @username";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                object result = cmd.ExecuteScalar();
+                return result.ToString();
             }
         }
 
