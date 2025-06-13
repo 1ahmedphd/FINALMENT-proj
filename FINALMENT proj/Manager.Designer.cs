@@ -250,7 +250,7 @@
             this.dataGridViewFeedback.RowTemplate.Height = 24;
             this.dataGridViewFeedback.Size = new System.Drawing.Size(1361, 445);
             this.dataGridViewFeedback.TabIndex = 16;
-            this.dataGridViewFeedback.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFeedback_CellContentClick);
+            this.dataGridViewFeedback.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFeedback_CellClick);
             this.dataGridViewFeedback.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewFeedback_RowHeaderMouseDoubleClick);
             // 
             // feedbackIDDataGridViewTextBoxColumn
