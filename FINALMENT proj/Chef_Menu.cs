@@ -20,7 +20,21 @@ namespace FINALMENT_proj
 
             currentUser = currentuser;
 
-            // Create a User object for the current Manager
+
+            using (SqlConnection _conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;")) 
+            {
+                _conn.Open();
+                string query = "Select OrderID, components, name from Orders inner join Users on Users.username = Orders.username where status = 'waiting'";
+                using (SqlCommand _cmd = new SqlCommand(query, _conn))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(_cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView2.DataSource = table;
+                }
+            }
+
+                // Create a User object for the current Manager
 
             SqlConnection conn = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;");
             conn.Open();
@@ -40,7 +54,7 @@ namespace FINALMENT_proj
 
             SqlConnection connt = new SqlConnection("Server=DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;");
             conn.Open();
-            SqlCommand cmnd = new SqlCommand("SELECT OrderID, Name FROM Orders ", connt);
+            SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting'", connt);
 
             SqlDataAdapter sdap = new SqlDataAdapter(cmnd);
 
@@ -131,7 +145,7 @@ namespace FINALMENT_proj
                         conn.Open();
 
                         // SQL DELETE command
-                        string query = "DELETE FROM [Menu] WHERE FoodID = @FoodID";
+                        string query = "DELETE FROM Menu WHERE FoodID = @FoodID";
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
                             cmd.Parameters.AddWithValue("@FoodID", empid);
@@ -172,7 +186,7 @@ namespace FINALMENT_proj
                     conn.Open();
 
                     // SQL UPDATE command to set Status = 'In Progress'
-                    string query = "UPDATE [Order] SET Status = @Status WHERE OrderID = @OrderID";
+                    string query = "UPDATE Orders SET status = @Status WHERE OrderID = @OrderID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -218,7 +232,7 @@ namespace FINALMENT_proj
                     conn.Open();
 
                     // SQL UPDATE command to set Status = 'In Progress'
-                    string query = "UPDATE [Order] SET Status = @Status WHERE OrderID = @OrderID";
+                    string query = "UPDATE Orders SET status = @Status WHERE OrderID = @OrderID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
