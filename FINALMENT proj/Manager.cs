@@ -578,12 +578,15 @@ namespace FINALMENT_proj
             }
         }
 
-        private void dataGridViewFeedback_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((dataGridViewFeedback.SelectedCells.Count == 1) && (dataGridViewFeedback.SelectedCells[0].ColumnIndex == 2 || dataGridViewFeedback.SelectedCells[0].ColumnIndex == 3))
+            // Make sure the click is on a valid cell (not header row)
+            if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3))
             {
-                MessageBox.Show(dataGridViewFeedback.SelectedCells[0].Value.ToString());
+                string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                MessageBox.Show(cellValue);
             }
         }
     }
+    
 }
