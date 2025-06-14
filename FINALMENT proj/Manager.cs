@@ -554,6 +554,11 @@ namespace FINALMENT_proj
                 MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            else if (textBox3.Text == textBox4.Text && textBox4.Text == textBox5.Text)
+            {
+                MessageBox.Show("Old password can't be the same as new password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             else
             {
                 string password;
