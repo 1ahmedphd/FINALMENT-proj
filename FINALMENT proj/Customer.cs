@@ -294,6 +294,7 @@ namespace FINALMENT_proj
         private void button4_Click(object sender, EventArgs e)
         {
             button5.Visible = true;
+            button8.Visible = true;
             textBox6.ReadOnly = false;
             textBox7.ReadOnly = false;
             richTextBox3.ReadOnly = false;
@@ -304,20 +305,31 @@ namespace FINALMENT_proj
             string originalUsername = currentUser.username;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "Update Users Set name= @name, username = @username, bio=@bio  where username = @original;";
+                string query = "Update Users Set name= @name, bio=@bio  where username = @original;";
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", textBox6.Text);
-                    cmd.Parameters.AddWithValue("@username", textBox7.Text);
                     cmd.Parameters.AddWithValue("@bio", richTextBox3.Text);
                     cmd.Parameters.AddWithValue("@original", originalUsername);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "DECLARE @OldValue NVARCHAR(MAX) = '@_original';\r\nDECLARE @NewValue NVARCHAR(MAX) = '@_username';\r\n\r\nDECLARE @TableName NVARCHAR(256);\r\nDECLARE @ColumnName NVARCHAR(256);\r\nDECLARE @SQL NVARCHAR(MAX);\r\n\r\n-- Disable all constraints and triggers\r\nEXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL';\r\nEXEC sp_msforeachtable 'DISABLE TRIGGER ALL ON ?';\r\n\r\n-- Cursor to go through all user tables and text-based columns\r\nDECLARE column_cursor CURSOR FOR\r\nSELECT \r\n    t.name AS TableName,\r\n    c.name AS ColumnName\r\nFROM \r\n    sys.tables t\r\nJOIN \r\n    sys.columns c ON t.object_id = c.object_id\r\nJOIN \r\n    sys.types y ON c.user_type_id = y.user_type_id\r\nWHERE \r\n    y.name IN ('varchar', 'nvarchar', 'text', 'ntext') -- only full text-like types\r\n    AND c.is_identity = 0\r\n    AND c.is_computed = 0;\r\n\r\nOPEN column_cursor;\r\nFETCH NEXT FROM column_cursor INTO @TableName, @ColumnName;\r\n\r\nWHILE @@FETCH_STATUS = 0\r\nBEGIN\r\n    SET @SQL = \r\n        'UPDATE [' + @TableName + '] ' +\r\n        'SET [' + @ColumnName + '] = @NewVal ' +\r\n        'WHERE [' + @ColumnName + '] = @OldVal';\r\n\r\n    BEGIN TRY\r\n        EXEC sp_executesql @SQL, \r\n            N'@OldVal NVARCHAR(MAX), @NewVal NVARCHAR(MAX)', \r\n            @OldVal = @OldValue, \r\n            @NewVal = @NewValue;\r\n    END TRY\r\n    BEGIN CATCH\r\n        PRINT 'Error updating [' + @TableName + '].[' + @ColumnName + ']: ' + ERROR_MESSAGE();\r\n    END CATCH;\r\n\r\n    FETCH NEXT FROM column_cursor INTO @TableName, @ColumnName;\r\nEND\r\n\r\nCLOSE column_cursor;\r\nDEALLOCATE column_cursor;\r\n\r\n-- Re-enable all constraints and triggers\r\nEXEC sp_msforeachtable 'ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL';\r\nEXEC sp_msforeachtable 'ENABLE TRIGGER ALL ON ?';\r\n";
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@_original", originalUsername);
+                    cmd.Parameters.AddWithValue("@_username", textBox7.Text);
                     cmd.ExecuteNonQuery();
                 }
             }
             MessageBox.Show("Updated Values");
 
             button5.Visible = false;
+            button8.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
             richTextBox3.ReadOnly = true;
