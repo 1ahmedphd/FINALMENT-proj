@@ -540,6 +540,7 @@ namespace FINALMENT_proj
             MessageBox.Show("Profile Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             currentUser.Refresh(textBox7.Text);
+            lblWelcomeManager.Text = "Welcome, " + currentUser.name;
             button5.Visible = false;
             button2.Visible = false;
             textBox6.ReadOnly = true;
