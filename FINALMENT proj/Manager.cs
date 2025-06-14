@@ -606,17 +606,17 @@ namespace FINALMENT_proj
         private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Make sure the click is on a valid cell (not header row)
-            try
+            if (e.RowIndex <= 0)
             {
-                string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
+                try
                 {
-                    MessageBox.Show(cellValue);
+                    string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                    if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
+                    {
+                        MessageBox.Show(cellValue);
+                    }
                 }
-            }
-            catch 
-            {
-                throw new NotImplementedException();
+                catch { }
             }
         }
 
