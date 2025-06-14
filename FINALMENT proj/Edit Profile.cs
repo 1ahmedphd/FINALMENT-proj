@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +15,12 @@ namespace FINALMENT_proj
     public partial class Edit_Profile : Form
     {
         public User currentUser;
-        public string connectionString;
+        public string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         public Edit_Profile(User currentuser)
         {
             InitializeComponent();
             currentUser = currentuser;
-            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName));
-            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "Select Bio from Users where Username = @username";
