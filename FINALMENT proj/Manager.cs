@@ -650,9 +650,7 @@ namespace FINALMENT_proj
                 }
             }
             catch
-            {
-                throw new NotImplementedException();
-            }
+            {}
         }
 
         private void button2_Click(object sender, EventArgs e)
