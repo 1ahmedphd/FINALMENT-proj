@@ -20,14 +20,12 @@ namespace FINALMENT_proj
         public ManagerForm(User currentuser)
         {
             InitializeComponent();
-            // TODO: This line of code loads data into the 'iOOPGADataSet.Feedback' table. You can move, or remove it, as needed.
-            this.feedbackTableAdapter.Fill(this.iOOPGADataSet.Feedback);
-            // TODO: This line of code loads data into the 'iOOPGADataSet.RefundRequests' table. You can move, or remove it, as needed.
-            this.refundRequestsTableAdapter.Fill(this.iOOPGADataSet.RefundRequests);
-            _managerLogic = new ManagerLogic(_connectionString); // Initialize the ManagerLogic instance
-            LoadFeedback(); // Load new feedback when the form loads
-            LoadRefunds(); // Load refund requests when the form loads
-            LoadUsernames(); // Populate the ListBox for the usernames to top up
+            this.feedbackTableAdapter.Fill(this.iOOPGADataSet.Feedback);            // Loads data into the Feedback table
+            this.refundRequestsTableAdapter.Fill(this.iOOPGADataSet.RefundRequests);// Loads data into the RefundRequests table
+            _managerLogic = new ManagerLogic(_connectionString);                    // Initialize the ManagerLogic instance
+            LoadFeedback();         // Load new feedback when the form loads
+            LoadRefunds();          // Load refund requests when the form loads
+            LoadUsernames();        // Populate the listBox with the usernames to top up
             #region update manager profile
             currentUser = currentuser;            
             lblWelcomeManager.Text = lblWelcomeManager.Text + currentUser.name;
@@ -71,11 +69,8 @@ namespace FINALMENT_proj
                     filter = "all";
                 }
 
-                // Fetch feedback based on the filter
-                List<Feedback> feedbackList = _managerLogic.GetFeedback(filter);
-
-                // Bind the data to the DataGridView
-                dataGridViewFeedback.DataSource = feedbackList;
+                List<Feedback> feedbackList = _managerLogic.GetFeedback(filter);    // Fetch feedback based on the filter           
+                dataGridViewFeedback.DataSource = feedbackList;                     // Bind the data to the DataGridView
 
                 // Adjust column widths for better readability
                 dataGridViewFeedback.Columns[0].Width = 75;     // FeedbackID
@@ -86,7 +81,7 @@ namespace FINALMENT_proj
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading feedback: {ex.Message}");
+                MessageBox.Show($"Error loading feedback: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void rbUnresponded_CheckedChanged(object sender, EventArgs e)
@@ -106,6 +101,36 @@ namespace FINALMENT_proj
             LoadFeedback();
         }
 
+        private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
+                {
+                    MessageBox.Show(cellValue);
+                }
+            }
+            catch { }
+        }
+
+        private void txtManagerResponse_Enter(object sender, EventArgs e)
+        {
+            bool isResponded = false;
+            foreach (DataGridViewRow row in dataGridViewFeedback.SelectedRows)
+            {
+                if (!string.IsNullOrEmpty(row.Cells[3].Value?.ToString()))
+                {
+                    isResponded = true;
+                }
+            }
+            if (isResponded)
+            {
+                MessageBox.Show("One or more selected feedbacks have already been responded to.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                LoadFeedback();
+            }
+        }
+
         /// <summary>
         /// Handles the button click event to respond to feedback.
         /// </summary>
@@ -114,7 +139,7 @@ namespace FINALMENT_proj
             // Validate if at least one row is selected
             if (dataGridViewFeedback.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select at least one feedback to respond.");
+                MessageBox.Show("Please select at least one feedback to respond.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -148,17 +173,16 @@ namespace FINALMENT_proj
                 // If any selected feedback has already been responded to, show a message and stop
                 if (hasResponded)
                 {
-                    MessageBox.Show("One or more selected feedbacks have already been responded to.");
+                    MessageBox.Show("One or more selected feedbacks have already been responded to.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                // Get the manager's response from the textbox
-                string response = txtManagerResponse.Text.Trim();
+                string response = txtManagerResponse.Text.Trim();   // Get the manager's response from the textbox
 
                 // Validate input
                 if (string.IsNullOrWhiteSpace(response))
                 {
-                    MessageBox.Show("Please enter a response.");
+                    MessageBox.Show("Please enter a response.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -175,29 +199,20 @@ namespace FINALMENT_proj
                     // Iterate through all selected rows
                     foreach (DataGridViewRow selectedRow in dataGridViewFeedback.SelectedRows)
                     {
-                        int feedbackID = Convert.ToInt32(selectedRow.Cells[0].Value);
-                        //int isResponded = Convert.ToInt32(selectedRow.Cells[4].Value);
-
-                        // Update the selected row in the DataGridView
-                        selectedRow.Cells[3].Value = response;
-                        //selectedRow.Cells[4].Value = 1;
-
-                        // Call the backend method to update the database
-                        _managerLogic.RespondToFeedback(feedbackID, response);
+                        int feedbackID = Convert.ToInt32(selectedRow.Cells[0].Value);   
+                        selectedRow.Cells[3].Value = response;                      // Update the selected row in the DataGridView
+                        _managerLogic.RespondToFeedback(feedbackID, response);      // Call the backend method to update the feedbacks
                     }
+                    
+                    LoadFeedback();                 // Reload feedback to reflect changes
+                    txtManagerResponse.Clear();     // Clear the response textbox
 
-                    // Reload feedback to reflect changes
-                    LoadFeedback();
-
-                    // Clear the response textbox
-                    txtManagerResponse.Clear();
-
-                    MessageBox.Show("All feedback responses submitted successfully!");
+                    MessageBox.Show("Feedback response(s) submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error responding to feedback: {ex.Message}");
+                MessageBox.Show($"Error responding to feedback: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -215,7 +230,7 @@ namespace FINALMENT_proj
         }
 
         /// <summary>
-        /// Loads refund requests into the DataGridView.
+        /// Loads new refund requests into the DataGridView.
         /// </summary>
         private void LoadRefunds()
         {
@@ -283,6 +298,20 @@ namespace FINALMENT_proj
         private void btnRefresh2_Click(object sender, EventArgs e)
         {
             LoadRefunds();
+        }
+
+        private void dataGridViewRefunds_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string cellValue = dataGridViewRefunds.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
+                {
+                    MessageBox.Show(cellValue);
+                }
+            }
+            catch
+            { }
         }
 
         /// <summary>
@@ -354,12 +383,11 @@ namespace FINALMENT_proj
                         selectedRow.Cells[4].Value = status;
                         selectedRow.Cells[5].Value = DateTime.Now;
 
-                        // Call the backend method to update the refund request
+                        // Call the backend method to update the refund requests
                         _managerLogic.UpdateRefundRequest(requestID, status, username, amount, rbApprove.Checked);
                     }
 
-                    // Reload refunds to reflect changes
-                    LoadRefunds();
+                    LoadRefunds();  // Reload refunds to reflect changes
 
                     MessageBox.Show("Refund request(s) updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -385,7 +413,7 @@ namespace FINALMENT_proj
                 List<string> usernames = _managerLogic.GetCustomerUsernames();
 
                 // Populate the ComboBox
-                lbUsername.Items.Clear(); // Clear existing items
+                lbUsername.Items.Clear(); 
                 foreach (string username in usernames)
                 {
                     lbUsername.Items.Add(username);
@@ -409,14 +437,13 @@ namespace FINALMENT_proj
                     string name = _managerLogic.GetUserName(selectedUsername);
                     string balance = _managerLogic.GetBalance(selectedUsername);
 
-                    // Update the Name label
-                    lblName2.Text = name;
-                    lblBalance2.Text = balance;
+                    lblName2.Text = name;           // Update the Name label
+                    lblBalance2.Text = balance;     // Update the Balance label
                 }
                 else
                 {
-                    lblName2.Text = string.Empty; // Clear the label if no username is selected
-                    lblBalance2.Text = string.Empty;
+                    lblName2.Text = string.Empty;       // Clear the label if no username is selected
+                    lblBalance2.Text = string.Empty;    // Clear the balance if no username is selected
                 }
             }
             catch (Exception ex)
@@ -426,17 +453,10 @@ namespace FINALMENT_proj
         }
         private void ClearTopUp()
         {
-            // Clear the selected item in the ComboBox
-            lbUsername.SelectedIndex = -1; // Deselect any selected item
-
-            // Reset the lblName2 label to its default state
-            lblName2.Text = "N/A"; // Set it to placeholder "N/A"
-
-            // Reset the lblBalance2 label to its default state
-            lblBalance2.Text = "N/A"; // Set it to placeholder "N/A"
-
-            // Clear the typed top up amount in the textbox
-            txtAmount.Text = string.Empty; //Delete any value
+            lbUsername.SelectedIndex = -1;  // Clear the selected item in the ComboBox
+            lblName2.Text = "N/A";          // Reset the lblName2 label to its default state
+            lblBalance2.Text = "N/A";       // Reset the lblBalance2 label to its default state
+            txtAmount.Text = string.Empty;  // Clear the typed top up amount in the textbox
         }
 
         /// <summary>
@@ -464,7 +484,7 @@ namespace FINALMENT_proj
             // Show confirmation dialog
             DialogResult result = MessageBox.Show(
                 $"Are you sure you want to top up RM {amount} to the selected user ({username} - {name})?",
-                "Confirmation",
+                "Top-Up Confirmation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -537,7 +557,7 @@ namespace FINALMENT_proj
                     cmd.ExecuteNonQuery();
                 }
             }
-            MessageBox.Show("Profile Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             currentUser.Refresh(textBox7.Text);
             lblWelcomeManager.Text = "Welcome, " + currentUser.name;
@@ -558,7 +578,7 @@ namespace FINALMENT_proj
             }
             else if (textBox3.Text == textBox4.Text && textBox4.Text == textBox5.Text)
             {
-                MessageBox.Show("Old password can't be the same as new password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Old password cannot be the same as new password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else
@@ -588,7 +608,7 @@ namespace FINALMENT_proj
                             cmd.ExecuteNonQuery();
                         }
                     }
-                    MessageBox.Show("Updated password", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Password updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
@@ -599,7 +619,7 @@ namespace FINALMENT_proj
                 }
                 else
                 {
-                    MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Passwords do not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -621,52 +641,6 @@ namespace FINALMENT_proj
                 this.Close();
             }
         }
-
-        private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Make sure the click is on a valid cell (not header row)
-            try
-            {
-                string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
-                {
-                    MessageBox.Show(cellValue);
-                }
-            }
-            catch { }
-        }
-
-        private void txtManagerResponse_Enter(object sender, EventArgs e)
-        {
-            bool isResponded = false;
-            foreach (DataGridViewRow row in dataGridViewFeedback.SelectedRows)
-            {
-                if (!string.IsNullOrEmpty(row.Cells[3].Value?.ToString()))
-                {
-                    isResponded = true;
-                }
-            }
-            if (isResponded)
-            {
-                MessageBox.Show("One or more selected feedbacks have already been responded to.");
-                LoadFeedback();
-            }
-        }
-
-        private void dataGridViewRefunds_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string cellValue = dataGridViewRefunds.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                if (e.RowIndex >= 0 && (e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
-                {
-                    MessageBox.Show(cellValue);
-                }
-            }
-            catch
-            {}
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             textBox6.Text = currentUser.name;
@@ -689,5 +663,4 @@ namespace FINALMENT_proj
             richTextBox3.ReadOnly = true;
         }
     }
-    
 }
