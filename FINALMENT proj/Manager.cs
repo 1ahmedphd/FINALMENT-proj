@@ -654,6 +654,17 @@ namespace FINALMENT_proj
         {
             textBox6.Text = currentUser.name;
             textBox7.Text = currentUser.username;
+            using (SqlConnection conn = new SqlConnection(_connectionString)) 
+            {
+                string query = "Select bio from Users where username = @username";
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", currentUser.username);
+                    object result = cmd.ExecuteScalar();
+                    richTextBox3.Text = result != null ? result.ToString() : null;
+                }
+            }
         }
     }
     
