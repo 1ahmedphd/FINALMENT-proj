@@ -608,18 +608,16 @@ namespace FINALMENT_proj
         private void dataGridViewFeedback_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Make sure the click is on a valid cell (not header row)
-            if (e.RowIndex <= 0)
+            try
             {
-                try
+                string cellValue = dataGridViewRefunds.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                if (e.RowIndex >= 0 && (e.ColumnIndex == 3) && (cellValue != "" || cellValue != null))
                 {
-                    string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-                    if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
-                    {
-                        MessageBox.Show(cellValue);
-                    }
+                    MessageBox.Show(cellValue);
                 }
-                catch { }
             }
+            catch
+            { }
         }
 
         private void txtManagerResponse_Enter(object sender, EventArgs e)
