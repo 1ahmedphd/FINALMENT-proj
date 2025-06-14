@@ -549,42 +549,50 @@ namespace FINALMENT_proj
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string password;
-            using (SqlConnection conn = new SqlConnection(_connectionString))
+            if (string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text))
             {
-                conn.Open();
-                string sqlQuery = "Select password from Users Where Username = @username";
-                using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
-                {
-                    cmd.Parameters.AddWithValue("@username", currentUser.username);
-                    object result = cmd.ExecuteScalar();
-                    password = result != null ? result.ToString() : null;
-                }
-            }
-            if ((password == textBox3.Text) && (textBox4.Text == textBox5.Text))
-            {
-                using (SqlConnection conn = new SqlConnection(_connectionString))
-                {
-                    string query = "Update Users Set password = @password  where username = @original;";
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@password", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@original", currentUser.username);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                MessageBox.Show("Updated password", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (password != textBox3.Text)
-            {
-                MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             else
             {
-                MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+                string password;
+                using (SqlConnection conn = new SqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    string sqlQuery = "Select password from Users Where Username = @username";
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", currentUser.username);
+                        object result = cmd.ExecuteScalar();
+                        password = result != null ? result.ToString() : null;
+                    }
+                }
+                if ((password == textBox3.Text) && (textBox4.Text == textBox5.Text))
+                {
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
+                    {
+                        string query = "Update Users Set password = @password  where username = @original;";
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@password", textBox4.Text);
+                            cmd.Parameters.AddWithValue("@original", currentUser.username);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Updated password", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (password != textBox3.Text)
+                {
+                    MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
 
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
