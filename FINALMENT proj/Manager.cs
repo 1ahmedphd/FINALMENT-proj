@@ -596,7 +596,9 @@ namespace FINALMENT_proj
                 {
                     MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
             }
         }
 
