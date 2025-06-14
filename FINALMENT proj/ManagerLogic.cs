@@ -109,9 +109,9 @@ namespace FINALMENT_proj
         #region Refund Requests Methods
 
         /// <summary>
-        /// Retrieves pending refund requests from the database.
+        /// Retrieves refund requests based on the specified filter.
         /// </summary>
-        /// <returns>A DataTable containing refund requests.</returns>
+        /// <returns>A list containing refund requests.</returns>
         public List<RefundRequest> GetRefundRequest(string filter)
         {
             List<RefundRequest> refundList = new List<RefundRequest>();

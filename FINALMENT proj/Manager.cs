@@ -26,7 +26,7 @@ namespace FINALMENT_proj
             LoadFeedback();         // Load new feedback when the form loads
             LoadRefunds();          // Load refund requests when the form loads
             LoadUsernames();        // Populate the listBox with the usernames to top up
-            #region update manager profile
+            #region Update Manager Profile part 2
             currentUser = currentuser;            
             lblWelcomeManager.Text = lblWelcomeManager.Text + currentUser.name;
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -105,10 +105,11 @@ namespace FINALMENT_proj
         {
             try
             {
+                // Get the value of the clicked cell
                 string cellValue = dataGridViewFeedback.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
                 if (e.RowIndex >= 0 && (e.ColumnIndex == 2 || e.ColumnIndex == 3) && (!string.IsNullOrEmpty(cellValue)))
                 {
-                    MessageBox.Show(cellValue);
+                    MessageBox.Show(cellValue); // Display the cell value in a message box
                 }
             }
             catch { }
@@ -117,16 +118,23 @@ namespace FINALMENT_proj
         private void txtManagerResponse_Enter(object sender, EventArgs e)
         {
             bool isResponded = false;
+
+            // Iterate through all selected rows in the DataGridView
             foreach (DataGridViewRow row in dataGridViewFeedback.SelectedRows)
             {
+                // Check if the ManagerResponse column has a non-empty value
                 if (!string.IsNullOrEmpty(row.Cells[3].Value?.ToString()))
                 {
                     isResponded = true;
                 }
             }
+
+            // If any selected feedback has already been responded to, show an error message
             if (isResponded)
             {
                 MessageBox.Show("One or more selected feedbacks have already been responded to.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                // Reload the feedback data to reset the DataGridView
                 LoadFeedback();
             }
         }
@@ -220,11 +228,9 @@ namespace FINALMENT_proj
 
         #region Refund Requests Handling
 
-        /// <summary>
-        /// Unchecks radio buttons to approve or reject refund requests
-        /// </summary>
         private void UncheckRefundRbs() 
         {
+            // Unchecks radio buttons to approve or reject refund requests
             rbApprove.Checked = false;
             rbReject.Checked = false;
         }
@@ -236,6 +242,7 @@ namespace FINALMENT_proj
         {
             try
             {
+                // Determine the filter based on the selected radio button
                 string filter;
                 if (rbPending.Checked)
                 {
@@ -532,8 +539,10 @@ namespace FINALMENT_proj
             this.refundRequestsTableAdapter.Fill(this.iOOPGADataSet.RefundRequests);
         }
 
+        #region Update Manager Profile part 1
         private void button4_Click(object sender, EventArgs e)
         {
+            // Enable editing by making buttons visible and text fields editable
             button5.Visible = true;
             button2.Visible = true;
             textBox6.ReadOnly = false;
@@ -546,10 +555,12 @@ namespace FINALMENT_proj
             string originalUsername = currentUser.username;
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
+                // SQL query to update the user's profile in the database
                 string query = "Update Users Set name= @name, username = @username, bio=@bio  where username = @original;";
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    // Add parameters to prevent SQL injection
                     cmd.Parameters.AddWithValue("@name", textBox6.Text);
                     cmd.Parameters.AddWithValue("@username", textBox7.Text);
                     cmd.Parameters.AddWithValue("@bio", richTextBox3.Text);
@@ -559,8 +570,11 @@ namespace FINALMENT_proj
             }
             MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Refresh the current user object with the updated username
             currentUser.Refresh(textBox7.Text);
-            lblWelcomeManager.Text = "Welcome, " + currentUser.name;
+            lblWelcomeManager.Text = "Welcome, " + currentUser.name;    // Update the welcome label to reflect the updated name
+
+            // Disable editing mode by hiding buttons and making fields read-only
             button5.Visible = false;
             button2.Visible = false;
             textBox6.ReadOnly = true;
@@ -571,11 +585,13 @@ namespace FINALMENT_proj
 
         private void button6_Click(object sender, EventArgs e)
         {
+            // Validate that all fields are filled
             if (string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text))
             {
                 MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            // Ensure the old password is not the same as the new password
             else if (textBox3.Text == textBox4.Text && textBox4.Text == textBox5.Text)
             {
                 MessageBox.Show("Old password cannot be the same as new password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -584,6 +600,8 @@ namespace FINALMENT_proj
             else
             {
                 string password;
+
+                // Retrieve the current password from the database
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
@@ -592,13 +610,15 @@ namespace FINALMENT_proj
                     {
                         cmd.Parameters.AddWithValue("@username", currentUser.username);
                         object result = cmd.ExecuteScalar();
-                        password = result != null ? result.ToString() : null;
+                        password = result != null ? result.ToString() : null;   // Store the retrieved password
                     }
                 }
+                // Check if the old password matches and the new passwords match each other
                 if ((password == textBox3.Text) && (textBox4.Text == textBox5.Text))
                 {
                     using (SqlConnection conn = new SqlConnection(_connectionString))
                     {
+                        // SQL query to update the password in the database
                         string query = "Update Users Set password = @password  where username = @original;";
                         conn.Open();
                         using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -609,10 +629,14 @@ namespace FINALMENT_proj
                         }
                     }
                     MessageBox.Show("Password updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear the password fields after successful update
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
                 }
+
+                // Handle incorrect old password and mismatched new passwords
                 else if (password != textBox3.Text)
                 {
                     MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -626,6 +650,7 @@ namespace FINALMENT_proj
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Confirm with the user before logging out
             DialogResult result = MessageBox.Show(
                 "Are you sure you want to log out?",
                 "Confirm Logout",
@@ -635,6 +660,7 @@ namespace FINALMENT_proj
 
             if (result == DialogResult.Yes)
             {
+                // Hide the current form and navigate back to the Welcome screen
                 this.Hide();
                 Welcome welcome = new Welcome();
                 welcome.ShowDialog();
@@ -643,24 +669,29 @@ namespace FINALMENT_proj
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            // Populate the fields with the current user's data to cancel editing
             textBox6.Text = currentUser.name;
             textBox7.Text = currentUser.username;
             using (SqlConnection conn = new SqlConnection(_connectionString)) 
             {
+                // Retrieve the bio from the database
                 string query = "Select bio from Users where username = @username";
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);
                     object result = cmd.ExecuteScalar();
-                    richTextBox3.Text = result != null ? result.ToString() : null;
+                    richTextBox3.Text = result != null ? result.ToString() : null;  // Set the bio field
                 }
             }
+            // Exit editing mode by hiding buttons and making fields read-only
             button5.Visible = false;
             button2.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
             richTextBox3.ReadOnly = true;
         }
+
+        #endregion
     }
 }
