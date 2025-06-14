@@ -515,6 +515,7 @@ namespace FINALMENT_proj
         private void button4_Click(object sender, EventArgs e)
         {
             button5.Visible = true;
+            button2.Visible = true;
             textBox6.ReadOnly = false;
             textBox7.ReadOnly = false;
             richTextBox3.ReadOnly = false;
@@ -536,9 +537,10 @@ namespace FINALMENT_proj
                     cmd.ExecuteNonQuery();
                 }
             }
-            MessageBox.Show("Updated Values");
+            MessageBox.Show("Profile Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             button5.Visible = false;
+            button2.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
             richTextBox3.ReadOnly = true;
@@ -649,6 +651,12 @@ namespace FINALMENT_proj
             }
             catch
             {}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox6.Text = currentUser.name;
+            textBox7.Text = currentUser.username;
         }
     }
     
