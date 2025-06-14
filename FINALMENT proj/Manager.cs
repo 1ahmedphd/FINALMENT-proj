@@ -587,6 +587,9 @@ namespace FINALMENT_proj
                         }
                     }
                     MessageBox.Show("Updated password", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
                 }
                 else if (password != textBox3.Text)
                 {
@@ -596,9 +599,6 @@ namespace FINALMENT_proj
                 {
                     MessageBox.Show("Passwords don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
             }
         }
 
