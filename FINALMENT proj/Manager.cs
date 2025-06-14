@@ -539,6 +539,7 @@ namespace FINALMENT_proj
             }
             MessageBox.Show("Profile Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            currentUser.Refresh(textBox7.Text);
             button5.Visible = false;
             button2.Visible = false;
             textBox6.ReadOnly = true;
