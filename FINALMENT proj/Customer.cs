@@ -294,6 +294,7 @@ namespace FINALMENT_proj
         private void button4_Click(object sender, EventArgs e)
         {
             button5.Visible = true;
+            button8.Visible = true;
             textBox6.ReadOnly = false;
             textBox7.ReadOnly = false;
             richTextBox3.ReadOnly = false;
@@ -318,6 +319,7 @@ namespace FINALMENT_proj
             MessageBox.Show("Updated Values");
 
             button5.Visible = false;
+            button8.Visible = false;
             textBox6.ReadOnly = true;
             textBox7.ReadOnly = true;
             richTextBox3.ReadOnly = true;
