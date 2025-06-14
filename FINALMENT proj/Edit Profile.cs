@@ -77,40 +77,56 @@ namespace FINALMENT_proj
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string password;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text))
             {
-                conn.Open();
-                string sqlQuery = "Select password FROM Users Where Username = @username";
-                using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
-                {
-                    cmd.Parameters.AddWithValue("@username", currentUser.username);
-                    object result = cmd.ExecuteScalar();
-                    password = result != null ? result.ToString() : null;
-                }
+                MessageBox.Show("Please fill in all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
-            if ((password == textBox3.Text) && (textBox4.Text == textBox5.Text))
+            else if (textBox3.Text == textBox4.Text && textBox4.Text == textBox5.Text)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string query = "Update Users Set password = @password  where username = @original;";
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@password", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@original", currentUser.username);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                MessageBox.Show("Updated password");
-            }
-            else if (password != textBox3.Text)
-            {
-                MessageBox.Show("Incorrect password");
+                MessageBox.Show("Old password cannot be the same as new password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
             else
             {
-                MessageBox.Show("Passwords don't match");
+                string password;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sqlQuery = "Select password from Users Where Username = @username";
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", currentUser.username);
+                        object result = cmd.ExecuteScalar();
+                        password = result != null ? result.ToString() : null;
+                    }
+                }
+                if ((password == textBox3.Text) && (textBox4.Text == textBox5.Text))
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        string query = "Update Users Set password = @password  where username = @original;";
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@password", textBox4.Text);
+                            cmd.Parameters.AddWithValue("@original", currentUser.username);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Password updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                }
+                else if (password != textBox3.Text)
+                {
+                    MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Passwords do not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
 
         }
@@ -131,6 +147,28 @@ namespace FINALMENT_proj
                 welcome.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox6.Text = currentUser.name;
+            textBox7.Text = currentUser.username;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "Select bio from Users where username = @username";
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", currentUser.username);
+                    object result = cmd.ExecuteScalar();
+                    richTextBox3.Text = result != null ? result.ToString() : null;
+                }
+            }
+            button5.Visible = false;
+            button2.Visible = false;
+            textBox6.ReadOnly = true;
+            textBox7.ReadOnly = true;
+            richTextBox3.ReadOnly = true;
         }
     }
 }
