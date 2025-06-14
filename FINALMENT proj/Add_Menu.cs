@@ -14,6 +14,7 @@ namespace FINALMENT_proj
 {
     public partial class Add_Menu : Form
     {
+        string connectionString;
         public Add_Menu()
         {
             InitializeComponent();

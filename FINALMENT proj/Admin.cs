@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,10 +18,12 @@ namespace FINALMENT_proj
 {
     public partial class Admin : Form
     {
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        string connectionString;
         public User currentUser;
         public Admin(User CurrentUser)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName));
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
             InitializeComponent();
             currentUser = CurrentUser;
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -373,6 +376,11 @@ namespace FINALMENT_proj
                 welcome.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

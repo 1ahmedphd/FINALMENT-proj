@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +15,18 @@ namespace FINALMENT_proj
     public partial class Chef_Menu : Form
     {
         public User currentUser;
+        string connectionString;
         public Chef_Menu(User currentuser)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName));
+            connectionString = connectionString;
             InitializeComponent();
 
             currentUser = currentuser;
 
                 // Create a User object for the current Manager
 
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT FoodID, Name FROM [Menu] ", conn);
 
@@ -38,7 +42,7 @@ namespace FINALMENT_proj
 
             conn.Close();
 
-            SqlConnection connt = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+            SqlConnection connt = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting' or status = 'in progress'", connt);
 
@@ -61,7 +65,7 @@ namespace FINALMENT_proj
 
         public void Refresh(SqlConnection conn)
         {
-            using (SqlConnection _conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True"))
+            using (SqlConnection _conn = new SqlConnection(connectionString))
             {
                 _conn.Open();
                 string query = "Select OrderID, components, name, status from Orders inner join Users on Users.username = Orders.username where status = 'waiting' or status = 'in progress'";
@@ -76,7 +80,7 @@ namespace FINALMENT_proj
             }
 
 
-            SqlConnection connt = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+            SqlConnection connt = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting' or status = 'in progress'", connt);
 
@@ -163,8 +167,6 @@ namespace FINALMENT_proj
                     int empid = int.Parse(listMenu.SelectedValue.ToString());
 
                     // Connection string - ideally move to App.config or static class
-                    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
                         conn.Open();
@@ -203,8 +205,6 @@ namespace FINALMENT_proj
             {
                 // Get selected OrderID from listOrder
                 string selectedOrderID = listOrder.SelectedValue.ToString();
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -252,8 +252,6 @@ namespace FINALMENT_proj
             {
                 // Get selected OrderID from listOrder
                 string selectedOrderID = listOrder.SelectedValue.ToString();
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {

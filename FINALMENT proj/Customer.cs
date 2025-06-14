@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace FINALMENT_proj
     {
         Random rand = new Random();
         List<string> chefs = new List<string>();
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        string connectionString;
         public User currentUser;
         public double balance;
         public string generatedOrderID;
@@ -29,7 +30,8 @@ namespace FINALMENT_proj
             // Removed the duplicate CellContentClick event handler
             dataGridView1.EditingControlShowing += dataGridView1_EditingControlShowing;
             dataGridView1.CellClick += dataGridView1_CellClick;
-
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName));
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
             currentUser = CurrentUser;
             textBox6.Text = currentUser.name;
             textBox7.Text = currentUser.username;

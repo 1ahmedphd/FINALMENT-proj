@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,14 @@ namespace FINALMENT_proj
 {
     public partial class ManagerForm : Form
     {
-        public string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        public string _connectionString;
         private ManagerLogic _managerLogic; // Instance of the ManagerLogic class
         public User currentUser;
         public ManagerForm(User currentuser)
         {
             InitializeComponent();
+            AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName));
+            _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
             // TODO: This line of code loads data into the 'iOOPGADataSet.Feedback' table. You can move, or remove it, as needed.
             this.feedbackTableAdapter.Fill(this.iOOPGADataSet.Feedback);
             // TODO: This line of code loads data into the 'iOOPGADataSet.RefundRequests' table. You can move, or remove it, as needed.
