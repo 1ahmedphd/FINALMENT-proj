@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FINALMENT_proj.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Chef_Menu">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YACAEAIghKATQBCEAECAAgAiABgAQIAAIAAABEgBhAA=</HashCode>
+      <FileName>Chef_Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Add_Menu">
+    <Position X="4" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAABAAAACAAAACAAAYQAAAAGAAAAAQAAQ=</HashCode>
+      <FileName>Add_Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Admin">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9yCAAAAAASAEQBiQAACAAABCIPw7AAAC0HAfAAABRAA=</HashCode>
+      <FileName>Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Customer">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/ySBIIAAASAkRBiQgACAAEFKIPw7AAACsHAfAAABhAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Edit_Profile">
+    <Position X="5.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAAAASAAABiAAACAAABCIMAZQAAAAOAeAAAAAAA=</HashCode>
+      <FileName>Edit Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Feedback">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAgAASAAAAAAAAAAAAAAAAAAAABAQAA=</HashCode>
+      <FileName>Feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.ManagerForm">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UWMIAUOAhaAVaJDIgAGCAjJyMOgZIAUZDWpfAFUYEMA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.ManagerLogic">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAgAAQABAAIAIAAAAAIIAAAAAAAIgAA=</HashCode>
+      <FileName>ManagerLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Menu">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAQAgAAAAAiABIAQAQAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.RefundRequest">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAEAAAAAAYAAQAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RefundRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Update_Menu">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAgAAAACAAABAAAACAAAgCAAAgQAAAABAJAAIQAAQ=</HashCode>
+      <FileName>Update_Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.User">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAgAAAAAAAEAAAAEAAAAAAAAABAAAAA=</HashCode>
+      <FileName>user class.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FINALMENT_proj.Welcome">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAAAAASAAABiAAACAAABCIAAYAAAAEGAAAABBBAA=</HashCode>
+      <FileName>Welcome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
