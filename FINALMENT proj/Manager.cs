@@ -27,10 +27,9 @@ namespace FINALMENT_proj
             _managerLogic = new ManagerLogic(_connectionString); // Initialize the ManagerLogic instance
             LoadFeedback(); // Load new feedback when the form loads
             LoadRefunds(); // Load refund requests when the form loads
-            UncheckRefundRbs(); // Unchecks radio buttons to approve or reject refund requests
             LoadUsernames(); // Populate the ListBox for the usernames to top up
-            currentUser = currentuser;
             #region update manager profile
+            currentUser = currentuser;            
             lblWelcomeManager.Text = lblWelcomeManager.Text + currentUser.name;
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
@@ -50,10 +49,10 @@ namespace FINALMENT_proj
 
         #region Feedback Handling
 
-/// <summary>
-/// Loads new feedback into the DataGridView.
-/// </summary>
-private void LoadFeedback()
+        /// <summary>
+        /// Loads new feedback into the DataGridView.
+        /// </summary>
+        private void LoadFeedback()
         {
             try
             {
@@ -129,7 +128,7 @@ private void LoadFeedback()
                     int isResponded = 0;
                     using (SqlConnection conn = new SqlConnection(_connectionString))
                     {
-                        string query = "Select IsResponded from Feedback where FeedbackID = @feedbackid";
+                        string query = "SELECT IsResponded FROM Feedback WHERE FeedbackID = @feedbackid";
                         SqlCommand cmd = new SqlCommand(query, conn);
                         conn.Open();
                         cmd.Parameters.AddWithValue("@feedbackid", selectedRow.Cells[0].Value);
@@ -207,6 +206,15 @@ private void LoadFeedback()
         #region Refund Requests Handling
 
         /// <summary>
+        /// Unchecks radio buttons to approve or reject refund requests
+        /// </summary>
+        private void UncheckRefundRbs() 
+        {
+            rbApprove.Checked = false;
+            rbReject.Checked = false;
+        }
+
+        /// <summary>
         /// Loads refund requests into the DataGridView.
         /// </summary>
         private void LoadRefunds()
@@ -255,11 +263,7 @@ private void LoadFeedback()
                 MessageBox.Show($"Error loading refund requests: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void UncheckRefundRbs()
-        {
-            rbApprove.Checked = false;
-            rbReject.Checked = false;
-        }
+
         private void rbPending_CheckedChanged(object sender, EventArgs e)
         {
             LoadRefunds();
@@ -420,6 +424,20 @@ private void LoadFeedback()
                 MessageBox.Show($"Error fetching name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void ClearTopUp()
+        {
+            // Clear the selected item in the ComboBox
+            lbUsername.SelectedIndex = -1; // Deselect any selected item
+
+            // Reset the lblName2 label to its default state
+            lblName2.Text = "N/A"; // Set it to placeholder "N/A"
+
+            // Reset the lblBalance2 label to its default state
+            lblBalance2.Text = "N/A"; // Set it to placeholder "N/A"
+
+            // Clear the typed top up amount in the textbox
+            txtAmount.Text = string.Empty; //Delete any value
+        }
 
         /// <summary>
         /// Handles the button click event to top up a customer's e-wallet.
@@ -458,6 +476,8 @@ private void LoadFeedback()
                     // Call the backend method
                     _managerLogic.TopUpEwallet(username, amount);
 
+                    ClearTopUp();
+
                     MessageBox.Show($"Successfully topped up RM {amount} for user {username}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -466,17 +486,10 @@ private void LoadFeedback()
                 }
             }
         }
+        
         private void btnClear_Click(object sender, EventArgs e)
         {
-            // Clear the selected item in the ComboBox
-            lbUsername.SelectedIndex = -1; // Deselect any selected item
-
-            // Reset the lblName2 label to its default state
-            lblName2.Text = "N/A"; // Set it to placeholder "N/A"
-
-            // Clear the typed top up amount in the textbox
-            txtAmount.Text = string.Empty; //Delete any value
-
+            ClearTopUp();
         }
 
         #endregion
@@ -575,10 +588,10 @@ private void LoadFeedback()
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-    "Are you sure you want to log out?",
-    "Confirm Logout",
-    MessageBoxButtons.YesNo,
-    MessageBoxIcon.Question
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
 );
 
             if (result == DialogResult.Yes)
