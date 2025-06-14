@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /FINALMENT proj/Database.mdf
 /FINALMENT proj/Database.mdf
+/FINALMENT proj/Database_log.ldf
