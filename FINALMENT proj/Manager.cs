@@ -665,6 +665,11 @@ namespace FINALMENT_proj
                     richTextBox3.Text = result != null ? result.ToString() : null;
                 }
             }
+            button5.Visible = false;
+            button2.Visible = false;
+            textBox6.ReadOnly = true;
+            textBox7.ReadOnly = true;
+            richTextBox3.ReadOnly = true;
         }
     }
     
