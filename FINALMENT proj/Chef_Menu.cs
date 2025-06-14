@@ -20,6 +20,20 @@ namespace FINALMENT_proj
 
             currentUser = currentuser;
 
+
+            using (SqlConnection _conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True")) 
+            {
+                _conn.Open();
+                string query = "Select OrderID, components, name from Orders inner join Users on Users.username = Orders.username where status = 'waiting'";
+                using (SqlCommand _cmd = new SqlCommand(query, _conn))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(_cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView2.DataSource = table;
+                }
+            }
+
                 // Create a User object for the current Manager
 
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
@@ -40,7 +54,7 @@ namespace FINALMENT_proj
 
             SqlConnection connt = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
             conn.Open();
-            SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting' or status = 'in progress'", connt);
+            SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting'", connt);
 
             SqlDataAdapter sdap = new SqlDataAdapter(cmnd);
 
@@ -53,44 +67,6 @@ namespace FINALMENT_proj
             listOrder.ValueMember = "OrderID";
 
             conn.Close();
-
-            Refresh(conn);
-            conn.Close();
-        }
-
-
-        public void Refresh(SqlConnection conn)
-        {
-            using (SqlConnection _conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True"))
-            {
-                _conn.Open();
-                string query = "Select OrderID, components, name, status from Orders inner join Users on Users.username = Orders.username where status = 'waiting' or status = 'in progress'";
-                using (SqlCommand _cmd = new SqlCommand(query, _conn))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(_cmd);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView2.DataSource = table;
-                }
-                _conn.Close();
-            }
-
-
-            SqlConnection connt = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmnd = new SqlCommand("SELECT OrderID, username FROM Orders where status = 'waiting' or status = 'in progress'", connt);
-
-            SqlDataAdapter sdap = new SqlDataAdapter(cmnd);
-
-            DataTable dtbl = new DataTable("Orders");
-
-            sdap.Fill(dtbl);
-
-            listOrder.DataSource = dtbl;
-            listOrder.DisplayMember = "Name";
-            listOrder.ValueMember = "OrderID";
-            conn.Close();
-            connt.Close();
         }
 
         private void Chef_Menu_Load(object sender, EventArgs e)
@@ -104,7 +80,6 @@ namespace FINALMENT_proj
         {
             Edit_Profile nef = new Edit_Profile(currentUser);
             nef.ShowDialog();
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -202,9 +177,9 @@ namespace FINALMENT_proj
             try
             {
                 // Get selected OrderID from listOrder
-                string selectedOrderID = listOrder.SelectedValue.ToString();
+                int selectedOrderID = (int)listOrder.SelectedValue;
 
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+                string connectionString = "DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -215,9 +190,8 @@ namespace FINALMENT_proj
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Status", "in Progress");
+                        cmd.Parameters.AddWithValue("@Status", "In Progress");
                         cmd.Parameters.AddWithValue("@OrderID", selectedOrderID);
-                        cmd.ExecuteNonQuery();
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -235,8 +209,6 @@ namespace FINALMENT_proj
                                             "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                     }
-                    conn.Close();
-                    Refresh(conn);
                 }
             }
             catch (Exception ex)
@@ -251,9 +223,9 @@ namespace FINALMENT_proj
             try
             {
                 // Get selected OrderID from listOrder
-                string selectedOrderID = listOrder.SelectedValue.ToString();
+                int selectedOrderID = (int)listOrder.SelectedValue;
 
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+                string connectionString = "DESKTOP-BFNOIDM\\SQLEXPRESS01;Database=oop ga;Trusted_Connection=True;";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -264,8 +236,8 @@ namespace FINALMENT_proj
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Status", "done");
-                        cmd.Parameters.AddWithValue("@OrderID", selectedOrderID.ToString());
+                        cmd.Parameters.AddWithValue("@Status", "Completed");
+                        cmd.Parameters.AddWithValue("@OrderID", selectedOrderID);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -283,8 +255,6 @@ namespace FINALMENT_proj
                                             "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                     }
-                    conn.Close();
-                    Refresh(conn);
                 }
             }
             catch (Exception ex)

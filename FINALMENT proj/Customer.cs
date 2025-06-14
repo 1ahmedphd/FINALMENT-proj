@@ -120,7 +120,7 @@ namespace FINALMENT_proj
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "Select OrderID, full_price, components, status from Orders where (username = @username and status = 'waiting') or (username = @username and status = 'in progress')";
+                string query = "Select OrderID, full_price, components, status from Orders where username = @username and status = 'waiting'";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", currentUser.username);
