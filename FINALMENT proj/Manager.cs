@@ -648,9 +648,7 @@ namespace FINALMENT_proj
                 }
             }
             catch
-            {
-                throw new NotImplementedException();
-            }
+            {}
         }
     }
     
