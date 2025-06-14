@@ -109,7 +109,7 @@ namespace FINALMENT_proj
         #region Refund Requests Methods
 
         /// <summary>
-        /// Retrieves pending refund requests from the database.
+        /// Retrieves refund requests based on the filter
         /// </summary>
         /// <returns>A DataTable containing refund requests.</returns>
         public List<RefundRequest> GetRefundRequest(string filter)
